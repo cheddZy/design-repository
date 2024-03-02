@@ -40,9 +40,15 @@ const { target, label } = Astro.props;
         outline: 2px transparent solid;
 
     }
+    @keyframes border-anim {
+        0% {outline: 4px rgba(150, 174, 224, 0.25) dotted;}
+        100% {outline: 2px #96aee0 solid;}
+    }
+
     a:hover {
         background: #3574F0;
         outline: 2px #96aee0 solid;
+        animation: border-anim 0.2s 1 ease-out;
     }
     a:active {
         background: #3574F0;

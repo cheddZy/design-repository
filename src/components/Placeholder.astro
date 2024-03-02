@@ -1,0 +1,54 @@
+---
+
+---
+
+
+<div class="wrapper">
+    <div class="blocky animate">
+
+    </div>
+    <div class="texty">
+        <div class="text animate"></div>
+        <div class="text animate"></div>
+        <div class="text animate"></div>
+    </div>
+</div>
+
+<style>
+    .wrapper {
+        width: 24rem;
+        height: 12rem;
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: row;
+        gap: 0.33rem;
+    }
+    .blocky {
+        background-color: #9ca3af;
+        height: 100%;
+        width: 100%;
+        @apply rounded-lg;
+    }
+    .animate {
+        animation: waves 3s infinite;
+    }
+    .texty {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.33rem;
+    }
+    .text {
+        width: 100%;
+        height: 1.5rem;
+        background-color: #9ca3af;
+        @apply rounded-md;
+    }
+
+    @keyframes waves {
+        0% {background-color: rgba(156, 163, 175, 0.6);}
+        50% {background-color: rgba(156, 163, 175, 0.2);}
+        100% {background-color: rgba(156, 163, 175, 0.6);}
+    }
+</style>
