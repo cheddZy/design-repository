@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Font Imports */
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem !important; /* 67.36px */}
+
+h2 {font-size: 3.158rem !important; /* 50.56px */}
+
+h3 {font-size: 2.369rem !important; /* 37.92px */}
+
+h4 {font-size: 1.777rem !important; /* 28.48px */}
+
+h5 {font-size: 1.333rem !important; /* 21.28px */}
+
+p {font-size: 1rem !important; /* 16px */}
+
+small {font-size: 0.750rem !important; /* 12px */}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+h6 {
+  font-size: var(--h6);
+}
+
+p {
+  font-size: var(--p) !important;
+}
+
+small {
+  font-size: var(--small) !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+}
+
+html {
+  font-family: Inter, sans-serif;
+  color-scheme: dark light;
+}
+
+html,
+body {
+  hanging-punctuation: first last;
+  font-family: 'Geist Variable', sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 75ch;
+  text-wrap: pretty;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+input, textarea, button, select {
+  font: inherit
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, html, body {
+    @apply transition-none;
+  }
+}
