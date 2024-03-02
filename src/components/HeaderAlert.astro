@@ -14,7 +14,7 @@ import '../styles/globals.scss'
         alertContainer.style.top = '-2rem';
         setTimeout(function() {
             alertBox.style.display = 'none';
-        }, 200)
+        }, 300)
         localStorage.setItem('alertBox', 'dismissed');
     })
 
@@ -49,11 +49,15 @@ import '../styles/globals.scss'
 <style>
 
     #alertContainer {
-        top: 1rem;
-        position: relative;
-        margin: auto;
+        top: 4rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
         max-width: 1100px;
         @apply transition-all;
+        @apply duration-300;
         transition-timing-function: ease-in;
 
         z-index: 1;
