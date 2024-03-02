@@ -1,0 +1,35 @@
+---
+
+import '../../styles/styles.scss'
+import '../../styles/globals.scss'
+const { buttonText, href, target, label } = Astro.props;
+---
+
+
+<button type="button" aria-label={label}>
+    <a href={href} target={target}>
+
+        { buttonText }
+    </a>
+</button>
+
+
+<style>
+
+    button {
+        display: flex;
+    }
+
+    a {
+        @apply px-3;
+        @apply py-1;
+        @apply rounded-full;
+        @apply transition-colors;
+        @apply duration-100;
+        border: 1px solid #B4B8BF;
+    }
+    a:hover {
+        background-color: #B4B8BF;
+    }
+
+</style>
