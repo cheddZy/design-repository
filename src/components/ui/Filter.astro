@@ -1,3 +1,61 @@
 ---
-$END$
+import '../../styles/styles.scss';
+import '../../styles/globals.scss';
+import FilterButton from "../buttons/FilterButton.astro";
+import GenericButton from "../buttons/GenericButton.astro";
+import Searchbox from "./Searchbox.astro";
 ---
+
+<section>
+    <h3>Filter</h3>
+    <div id="filterButtons">
+        <FilterButton buttonText='About'
+                      label='Aria Label'/>
+        <FilterButton buttonText='About'
+                      label='Aria Label'/>
+        <FilterButton buttonText='About'
+                      label='Aria Label'/>
+        <FilterButton buttonText='About'
+                      label='Aria Label'/>
+        <FilterButton buttonText='About'
+                      label='Aria Label'/>
+    </div>
+    <Searchbox/>
+</section>
+
+<style>
+    #filterButtons {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+    }
+    section {
+        min-height: 50px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        position: sticky;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 6rem;
+        background-color: rgba(213, 220, 242, 0.5);
+        border: rgba(213, 220, 242, 1) 1px solid;
+        @apply rounded-lg;
+        padding: 0 1rem;
+    }
+
+    h3 {
+        display: none;
+        font-size: 1rem !important;
+    }
+    @media screen and (max-width: 800px) {
+        section {
+            flex-direction: column-reverse;
+            gap: 1rem;
+            padding: 1rem;
+        }
+    }
+
+
+</style>

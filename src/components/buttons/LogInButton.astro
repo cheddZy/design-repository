@@ -16,7 +16,7 @@ const { target, label } = Astro.props;
 <button id="loginButton" type="button" aria-label={label}>
     <a href='/' target={target}>
 
-        Sign Up
+        Log In
     </a>
 </button>
 
@@ -29,24 +29,22 @@ const { target, label } = Astro.props;
 
     a {
         @apply px-4;
-        @apply py-1;
+        @apply py-[0.5rem];
         @apply rounded-full;
         @apply transition-all;
         @apply duration-100;
-        color: #F0F1F2;
-        font-size: 1.1rem;
-        border: 2px #F0F1F2 solid;
-        background: #1E1F22;
-        outline: 2px transparent solid;
+        font-size: 0.9rem;
+        background: transparent;
+        border: 2px rgba(87, 90, 102, 0.2) solid;
 
     }
     a:hover {
-        background: #3574F0;
-        outline: 2px #96aee0 solid;
+        color: #3574F0;
+        border: 2px #96aee0 solid;
     }
     a:active {
-        background: #3574F0;
-        outline: 2px #3574F0 solid;
+        color: #3574F0;
+        border: 2px #3574F0 solid;
     }
 
 </style>

@@ -1,3 +1,36 @@
 ---
-$END$
+
 ---
+
+
+<label for="searchbox">label</label>
+<input type="search" placeholder="placeholder" id="searchbox"/>
+
+
+<style>
+    label {
+        display: none;
+    }
+
+    input {
+        @apply px-2;
+        @apply py-1;
+        @apply rounded-lg;
+        @apply transition-colors;
+        color: #3574F0;
+        background-color: transparent;
+        border: #3574F0 1px solid;
+        outline: transparent 1px solid;
+    }
+
+    input::placeholder {
+        color: rgba(53, 115, 240, 0.5);
+    }
+
+    input:focus {
+        color: inherit;
+        outline: #3574F0 1px solid;
+        background-color: #ffffff;
+        border: #3574F0 1px solid;
+    }
+</style>

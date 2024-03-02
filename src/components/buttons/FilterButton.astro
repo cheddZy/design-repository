@@ -1,20 +1,40 @@
 ---
-
 import '../../styles/styles.scss'
 import '../../styles/globals.scss'
-const { buttonText, href, target, label } = Astro.props;
+const {buttonText, label, filterChecked} = Astro.props;
 ---
+<script>
+    const button = document.getElementById('filterButton');
 
+    button.addEventListener('click', () => {
+        console.log('buttonStatus');
+        switch (buttonStatus) {
+            case 'filterEnabled':
+                button.classList.add('filterDisabled');
+                button.classList.remove('filterEnabled');
+                console.log('yippie!');
+                break;
+            case 'filterDisabled':
+                button.classList.add('filterEnabled');
+                button.classList.remove('filterDisabled');
+                console.log('wahoo');
+                break;
+        }
+    })
 
-<button type="button" aria-label={label}>
-    <a href={href} target={target}>
+</script>
 
-        { buttonText }
+<button class="filterDisabled" id=filterButton aria-label={label}>
+    <a>
+            {buttonText}
     </a>
 </button>
 
-
 <style>
+
+    [data-enabled='enabled'] body {
+        color: red;
+    }
 
     button {
         display: flex;
@@ -30,9 +50,17 @@ const { buttonText, href, target, label } = Astro.props;
         font-size: 0.9rem;
         border: 1px transparent solid;
     }
+
     a:hover {
-        background: linear-gradient(rgba(87, 90, 102, 0.1), transparent);
         border: 1px rgba(87, 90, 102, 0.2) solid;
+    }
+
+    a:active {
+
+    }
+
+    span:enabled {
+        color: red;
     }
 
 </style>

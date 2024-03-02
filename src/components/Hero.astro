@@ -1,3 +1,75 @@
 ---
-$END$
+import '../styles/styles.scss';
+import '../styles/globals.scss';
+import SignUpButton from "./buttons/SignUpButton.astro";
+import GenericButton from "./buttons/GenericButton.astro";
+import LogInButton from "./buttons/LogInButton.astro";
 ---
+<!--TODO:
+        1. Header & Subheader
+        2. Signup button
+        -->
+
+<section>
+    <div id="IconWrap">
+        <svg data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z"></path>
+        <path clip-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z" fill-rule="evenodd"></path>
+    </svg>
+    </div>
+    <h5>
+        End-all-be-all bookmark repository for designers,<br>
+        featuring a curated list of resources & other cool finds.
+    </h5>
+    <div id="signIn">
+        <SignUpButton
+                href="/"
+                target="_blank"
+                label='Sign up button'
+        />
+        <LogInButton
+                href="/"
+                target="_blank"
+                label='Log in Button'
+        />
+    </div>
+
+</section>
+
+
+<style>
+
+    section {
+        top: 1rem;
+        position: relative;
+        margin: 6rem auto;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    #IconWrap {
+        aspect-ratio: 1;
+        @apply rounded-full;
+        padding: 1rem;
+        border: solid 1px #3574F0;
+        background-color: rgba(62, 96, 238, 0.1);
+    }
+    #signIn {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    svg {
+        height: 2rem;
+        color: #3574F0;
+    }
+    h5 {
+        font-weight: 500;
+        text-align: center;
+    }
+
+</style>

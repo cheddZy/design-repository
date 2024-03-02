@@ -3,11 +3,14 @@ interface Props {
 	title: string;
 }
 
+import '../styles/styles.scss';
+import '../styles/globals.scss';
+
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html data-alertBox="dismissed" lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />

@@ -26,10 +26,13 @@ const { buttonText, href, target, label } = Astro.props;
         @apply rounded-full;
         @apply transition-colors;
         @apply duration-100;
-        border: 1px solid #B4B8BF;
+
+        font-size: 0.9rem;
+        border: 1px transparent solid;
     }
     a:hover {
-        background-color: #B4B8BF;
+        background: linear-gradient(rgba(87, 90, 102, 0.1), transparent);
+        border: 1px rgba(87, 90, 102, 0.2) solid;
     }
 
 </style>

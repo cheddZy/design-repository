@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-theme='light'] {
+@import '@radix-ui/colors/gray.css';
 
+
+body {
+  background-color: #F0F1F2;
+  color: #1E1F22;
 }
-
-[data-theme='dark'] {
-
-}
-
