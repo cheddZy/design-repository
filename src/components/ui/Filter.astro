@@ -1,10 +1,8 @@
 ---
 import '../../styles/styles.scss';
 import '../../styles/globals.scss';
-import FilterButton from "../buttons/FilterButton.astro";
 import Searchbox from "./Searchbox.astro";
 ---
-
 <div>
     <section>
         <h3>Filter</h3>
@@ -16,12 +14,11 @@ import Searchbox from "./Searchbox.astro";
                   fill-rule="evenodd"></path>
         </svg>
         <div id="filterButtonList">
-            <FilterButton class='filterButton' buttonText='All' label='All content'/>
-            <FilterButton class='filterButton' buttonText='Inspiration' label='Inspiration content'/>
-            <FilterButton class='filterButton' buttonText='Personal' label='Personal websites and portfolios'/>
-            <FilterButton class='filterButton' buttonText='Commerce' label='Commerce website'/>
-            <FilterButton class='filterButton' buttonText='Resources' label='Resource websites'/>
-            <FilterButton class='filterButton' buttonText='Free' label='Free resources'/>
+            <button class='filterButton inspiration' aria-label='Inspiration contentt'>Inspiration</button>
+            <button class='filterButton personal' aria-label='Personal websites, portfolios, blogs'>Personal</button>
+            <button class='filterButton commerce' aria-label='Commerce tools'>Commerce</button>
+            <button class='filterButton resources' aria-label='Resources'>Resources</button>
+            <button class='filterButton free' aria-label='Free resources'>Free</button>
         </div>
     </section>
 </div>
@@ -52,9 +49,6 @@ import Searchbox from "./Searchbox.astro";
         overflow-x: clip;
     }
 
-    .filterButton {
-
-    }
 
     svg {
         height: 1.5rem;
@@ -73,6 +67,46 @@ import Searchbox from "./Searchbox.astro";
             border-radius: 0;
         }
 
+    }
+
+
+
+
+    .filterButton {
+        display: flex;
+    }
+
+    .filterButton {
+        @apply px-3;
+        @apply py-1;
+        @apply rounded-full;
+        @apply transition-colors;
+        @apply duration-100;
+
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgb(9, 32, 128);
+        border: 1px transparent solid;
+    }
+    .filterButton {
+        //color: red !important;
+    }
+
+    .filterButton:hover {
+        border: 1px #3574F0 solid;
+    }
+
+    .filterButton:active {
+        color: #F0F1F2;
+        font-weight: 500;
+        background-color: #3574F0;
+        border: 1px transparent solid;
+    }
+    .filterButton.active {
+        color: #F0F1F2;
+        font-weight: 500;
+        background-color: #3574F0;
+        border: 1px transparent solid;
     }
 
 

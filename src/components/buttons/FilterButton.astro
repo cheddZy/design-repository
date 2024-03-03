@@ -7,18 +7,18 @@ const {buttonText, label, className} = Astro.props;
 
 </script>
 
-<button class={className} aria-label={label}>
+<button class='filterButton' aria-label={label}>
     <a>
             {buttonText}
     </a>
 </button>
 
 <style>
-    button {
+    .filterButton {
         display: flex;
     }
 
-    a {
+    .filterButton a {
         @apply px-3;
         @apply py-1;
         @apply rounded-full;
@@ -31,11 +31,11 @@ const {buttonText, label, className} = Astro.props;
         border: 1px transparent solid;
     }
 
-    a:hover {
+    .filterButton a:hover {
         border: 1px #3574F0 solid;
     }
 
-    a:active {
+    .filterButton a:active {
         color: #F0F1F2;
         font-weight: 500;
         background-color: #3574F0;

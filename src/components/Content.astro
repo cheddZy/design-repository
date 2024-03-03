@@ -1,37 +1,140 @@
 ---
 import '../styles/styles.scss';
 import '../styles/globals.scss';
-import Filter from "./ui/Filter.astro";
-import Placeholder from "./Placeholder.astro";
 ---
+<script>
+    let filters = new Set();
+    let buttons = document.querySelectorAll('.filterButton');
+    let items = document.querySelectorAll('.item');
+    let showAll = document.getElementById('filterAll');
 
+    //filter button listener
+    for (const btn of buttons) {
+        btn.addEventListener('click', () => {
+            if (btn.classList.contains('active')) {
+                btn.classList.remove('active');
+                filters.delete(btn.innerHTML.toLowerCase());
+            } else {
+                btn.classList.add('active');
+                filters.add(btn.innerHTML.toLowerCase());
+            }
+
+            console.log(filters);
+
+            if (showAll.classList.contains('active')) {
+                showAll.classList.remove('active');
+            } else if(filters.size == 0) {
+                showAll.classList.add('active');
+                showAllItems();
+            }
+            updateList();
+        })
+    }
+
+    // showAll listener
+    showAll.addEventListener('click', () => {
+        if (showAll.classList.contains('active')) {
+            showAll.classList.remove('active');
+        }
+        else {
+            showAll.classList.add('active');
+            filters.clear();
+            showAllItems();
+        }
+        console.log(filters);
+
+        for(const btn of buttons) {
+            if(filters.size === 0) {
+                btn.classList.remove('active');
+                showAll.classList.add('active');
+                showAllItems();
+            } else {
+
+            }
+        }
+        updateList();
+    })
+
+    function updateList() {
+        if(filters.size === 0) {
+         showAllItems();
+        } else {
+            for (const item of items) {
+                items.forEach(item => {
+                    const itemText = item.textContent.trim();
+                    if (filters.has(itemText)) {
+                        console.log(itemText);
+                        item.classList.add('show');
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                        item.classList.remove('show');
+                    }
+                });
+            }
+        }
+    }
+    function showAllItems() {
+        for(const item of items) {
+            item.classList.add('show');
+            item.classList.remove('hide');
+        }
+    }
+
+
+</script>
 
 <section>
     <div id="filterList">
-        <Filter/>
+        <div>
+            <section class="filterMenu">
+                <h3>Filter</h3>
+                <div class="filterButtonList">
+                    <button class="active" id="filterAll">All</button>
+                </div>
+                <div class="filterButtonList">
+                    <button class='filterButton' aria-label='Inspiration contentt'>Inspiration</button>
+                    <button class='filterButton' aria-label='Personal websites, portfolios, blogs'>Personal</button>
+                    <button class='filterButton' aria-label='Commerce tools'>Commerce</button>
+                    <button class='filterButton' aria-label='Resources'>Resources</button>
+                    <button class='filterButton' aria-label='Free resources'>Free</button>
+                </div>
+            </section>
+        </div>
     </div>
-    <div id="favorites">
-        <Placeholder />
-        <Placeholder />
-        <Placeholder />
-        <Placeholder />
-    </div>
-    <div id="content">
-        <Placeholder />
-        <Placeholder />
-        <Placeholder />
+    <div id="contentWrap">
+        <p class="item show free">free</p>
+        <p class="item show free">free</p>
+        <p class="item show inspiration">inspiration</p>
+        <p class="item show free">free</p>
+        <p class="item show commerce">commerce</p>
+        <p class="item show free">free</p>
+        <p class="item show free">free</p>
+        <p class="item show inspiration">inspiration</p>
+        <p class="item show free">free</p>
+        <p class="item show free">free</p>
+
     </div>
 </section>
 
 
 <style>
-    #content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
+    #contentWrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
         margin-inline: 4%;
     }
+
+    .hide {
+        display: none;
+    }
+
+    .contentBlock.hide {
+        display: none;
+    }
+
     #favorites {
         display: flex;
         flex-direction: row;
@@ -39,6 +142,7 @@ import Placeholder from "./Placeholder.astro";
         flex-wrap: wrap;
         margin-inline: 4%;
     }
+
     section {
         display: flex;
         flex-direction: column;
@@ -48,7 +152,7 @@ import Placeholder from "./Placeholder.astro";
     #filterList {
         top: 0;
         position: sticky;
-        margin:auto;
+        margin: auto;
         max-width: 1200px;
         display: flex;
         flex-direction: column;
@@ -56,5 +160,91 @@ import Placeholder from "./Placeholder.astro";
         justify-content: center;
         align-items: center;
     }
+
+    .filterButtonList {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        background-color: #d1def6;
+        border: #3574F0 1px solid;
+        @apply rounded-lg;
+        padding: 0.5rem 1rem;
+    }
+
+
+    .filterMenu {
+        min-height: 50px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        position: sticky;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0.5rem;
+        overflow-x: clip;
+    }
+
+
+    svg {
+        height: 1.5rem;
+        color: #3574F0;
+    }
+
+    h3 {
+        display: none;
+        font-size: 1rem !important;
+    }
+
+    @media screen and (max-width: 800px) {
+        section {
+            flex-direction: row;
+            padding: 1rem;
+            border-radius: 0;
+        }
+
+    }
+
+
+    .filterButton, #filterAll {
+        display: flex;
+    }
+
+    .filterButton, #filterAll {
+        @apply px-3;
+        @apply py-1;
+        @apply rounded-full;
+        @apply transition-colors;
+        @apply duration-100;
+
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgb(9, 32, 128);
+        border: 1px transparent solid;
+    }
+
+    .filterButton, #filterAll {
+    //color: red !important;
+    }
+
+    .filterButton:hover, #filterAll:hover {
+        border: 1px #3574F0 solid;
+    }
+
+    .filterButton:active, #filterAll:active {
+        color: #F0F1F2;
+        font-weight: 500;
+        background-color: #3574F0;
+        border: 1px transparent solid;
+    }
+
+    .filterButton.active, #filterAll.active {
+        color: #F0F1F2;
+        font-weight: 500;
+        background-color: #3574F0;
+        border: 1px transparent solid;
+    }
+
 
 </style>
