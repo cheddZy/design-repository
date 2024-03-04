@@ -7,6 +7,7 @@ const {label, tag1, tag2, tag3, title, func} = Astro.props;
       <small class="tagCard">{tag1}</small>
       <small class="tagCard free">{tag2}</small>
    </div>
+   <span>(image goes here)</span>
    <div class="bottomCard">
       <div class="textCard">
          <h3>{title}</h3>
@@ -41,9 +42,11 @@ const {label, tag1, tag2, tag3, title, func} = Astro.props;
    flex-direction: column;
    justify-content: space-between;
    cursor: pointer;
+
+   /*temp*/
 }
 .textCard {
-   width: auto;
+
 }
 svg {
    width: 1.5rem;
@@ -55,6 +58,7 @@ button {
    display: grid;
    place-items: center;
    @apply transition-colors;
+   border: 1px solid rgba(240, 241, 242, 0.25);
 
    aspect-ratio: 1;
 }
@@ -70,8 +74,20 @@ button:hover svg {
 
 
 .tagsList {
-   @apply py-1;
+   @apply py-2;
    @apply px-2;
+
+   display: flex;
+   flex-direction: row;
+   gap: 0.35rem;
+}
+.tagsList .textCard {
+
+}
+span {
+   text-align: center;
+   color: whitesmoke;
+   opacity: 0.75;
 }
 .bottomCard {
    @apply p-3;
