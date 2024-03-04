@@ -1,88 +1,8 @@
 ---
 import '../styles/styles.scss';
 import '../styles/globals.scss';
+import Card from "./ui/Card.astro";
 ---
-<script>
-    let filters = new Set();
-    let buttons = document.querySelectorAll('.filterButton');
-    let items = document.querySelectorAll('.item');
-    let showAll = document.getElementById('filterAll');
-
-    //filter button listener
-    for (const btn of buttons) {
-        btn.addEventListener('click', () => {
-            if (btn.classList.contains('active')) {
-                btn.classList.remove('active');
-                filters.delete(btn.innerHTML.toLowerCase());
-            } else {
-                btn.classList.add('active');
-                filters.add(btn.innerHTML.toLowerCase());
-            }
-
-            console.log(filters);
-
-            if (showAll.classList.contains('active')) {
-                showAll.classList.remove('active');
-            } else if(filters.size == 0) {
-                showAll.classList.add('active');
-                showAllItems();
-            }
-            updateList();
-        })
-    }
-
-    // showAll listener
-    showAll.addEventListener('click', () => {
-        if (showAll.classList.contains('active')) {
-            showAll.classList.remove('active');
-        }
-        else {
-            showAll.classList.add('active');
-            filters.clear();
-            showAllItems();
-        }
-        console.log(filters);
-
-        for(const btn of buttons) {
-            if(filters.size === 0) {
-                btn.classList.remove('active');
-                showAll.classList.add('active');
-                showAllItems();
-            } else {
-
-            }
-        }
-        updateList();
-    })
-
-    function updateList() {
-        if(filters.size === 0) {
-         showAllItems();
-        } else {
-            for (const item of items) {
-                items.forEach(item => {
-                    const itemText = item.textContent.trim();
-                    if (filters.has(itemText)) {
-                        console.log(itemText);
-                        item.classList.add('show');
-                        item.classList.remove('hide');
-                    } else {
-                        item.classList.add('hide');
-                        item.classList.remove('show');
-                    }
-                });
-            }
-        }
-    }
-    function showAllItems() {
-        for(const item of items) {
-            item.classList.add('show');
-            item.classList.remove('hide');
-        }
-    }
-
-
-</script>
 
 <section>
     <div id="filterList">
@@ -103,16 +23,34 @@ import '../styles/globals.scss';
         </div>
     </div>
     <div id="contentWrap">
-        <p class="item show free">free</p>
-        <p class="item show free">free</p>
-        <p class="item show inspiration">inspiration</p>
-        <p class="item show free">free</p>
-        <p class="item show commerce">commerce</p>
-        <p class="item show free">free</p>
-        <p class="item show free">free</p>
-        <p class="item show inspiration">inspiration</p>
-        <p class="item show free">free</p>
-        <p class="item show free">free</p>
+        <div class="item show free">
+            <p class="labelText">FREE</p>
+            <Card label="free"/>
+        </div>
+        <div class="item show free">
+            <p class="labelText">FREE</p>
+            <Card label="free"/>
+        </div>
+        <div class="item show free">
+            <label class="labelText">insPIRATION</label>
+            <Card label="inspiration" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">resources</p>
+            <Card label="resources" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">resources</p>
+            <Card label="resources" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">resources</p>
+            <Card label="resources" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">resources</p>
+            <Card label="its not dependent on tag text" />
+        </div>
 
     </div>
 </section>
@@ -125,9 +63,15 @@ import '../styles/globals.scss';
         grid-template-rows: auto;
         gap: 1rem;
         margin-inline: 4%;
+        margin-top: 2rem;
+        max-width: 1400px;
     }
 
     .hide {
+        display: none;
+    }
+
+    .labelText {
         display: none;
     }
 
@@ -245,6 +189,98 @@ import '../styles/globals.scss';
         background-color: #3574F0;
         border: 1px transparent solid;
     }
-
+    .implied {
+        background-color: rgba(53, 115, 240, 0.25);
+    }
 
 </style>
+
+<script>
+    let filters = new Set();
+    let buttons = document.querySelectorAll('.filterButton');
+    let items = document.querySelectorAll('.item');
+    let showAll = document.getElementById('filterAll');
+
+    //filter button listener
+    for (const btn of buttons) {
+        btn.addEventListener('click', () => {
+            if (btn.classList.contains('active')) {
+                btn.classList.remove('active');
+                filters.delete(btn.innerHTML.toUpperCase());
+            } else {
+                btn.classList.add('active');
+                filters.add(btn.innerHTML.toUpperCase());
+            }
+
+            if (showAll.classList.contains('active')) {
+                showAll.classList.remove('active');
+            } else if (filters.size === 0) {
+                showAll.classList.add('active');
+                showAllItems();
+            } else if (filters.size === 5) {
+                showAll.classList.add('implied');
+                showAllItems();
+            } else if (filters.size <= 5) {
+                showAll.classList.remove('implied');
+            }
+            updateList();
+        })
+
+    }
+
+    // showAll listener
+    showAll.addEventListener('click', () => {
+        if (showAll.classList.contains('active')) {
+            showAll.classList.remove('active');
+        } else {
+            showAll.classList.add('active');
+            filters.clear();
+            showAllItems();
+        }
+
+        for (const btn of buttons) {
+            if (filters.size === 0) {
+                btn.classList.remove('active');
+                showAll.classList.add('active');
+                showAllItems();
+            } else {
+
+            }
+        }
+        updateList();
+    })
+    let labelsText = document.querySelectorAll('.item small')
+    function updateList() {
+        if (filters.size === 0) {
+            showAllItems();
+        } else {
+
+            items.forEach(item => {
+                console.log(item.querySelector('p') + ' item');
+
+                item.firstElementChild.textContent;
+
+                let itemText = item.firstElementChild.textContent.toUpperCase().trim();
+
+                if (filters.has(itemText)) {
+
+                    item.classList.add('show');
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                    item.classList.remove('show');
+                }
+            });
+        }
+
+    }
+
+    function showAllItems() {
+        for (const item of items) {
+            item.classList.add('show');
+            item.classList.remove('hide');
+        }
+    }
+
+
+</script>

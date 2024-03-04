@@ -1,0 +1,30 @@
+---
+const {label} = Astro.props;
+---
+
+<div class="item" aria-label={label} id="cardContainer">
+   <div>
+      <small>{label}</small>
+</div>
+</div>
+
+
+<style>
+#cardContainer {
+   background: linear-gradient(#250B5B, #060525);
+   width: 16rem;
+   height: 16rem;
+   @apply rounded-lg;
+}
+
+#cardContainer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+small {
+   color: white;
+}
+
+</style>
