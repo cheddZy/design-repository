@@ -1,24 +1,38 @@
 ---
-const {label, title, func} = Astro.props;
+const {label, title, func, src, href} = Astro.props;
 import { Image } from 'astro:assets'
 ---
+
+<script>
+   const card = document.getElementById('cardContainer');
+
+   let gradient = 'linear-gradient(#'+{colorHex}+' 25%, #060525 75%);'
+
+   card.style.background = gradient;
+   console.log(gradient);
+
+</script>
 
 <div class="item" aria-label={label} id="cardContainer">
    <div class="tagsList">
 
    </div>
 
-      <!--<div>-->
-      <!--   <Image src={src} alt="Alt text"/>-->
-      <!--</div>-->
+   <!--<div>-->
+   <!--</div>-->
 
+    <div class="imgCard">
+
+           <Image src={src} alt="Alt text"/>
+
+   </div>
    <div class="bottomCard">
       <div class="textCard">
          <h3>{title}</h3>
          <p>{func}</p>
       </div>
       <button>
-         <a>
+         <a href={href} target="_blank">
             <svg data-slot="icon" aria-hidden="true" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                <path d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
@@ -30,7 +44,7 @@ import { Image } from 'astro:assets'
 
 <style>
 #cardContainer {
-   background: linear-gradient(#250B5B 25%, #060525 75%);
+   background: linear-gradient(#b4c6ef, #0f0c3f 75%);
    width: 19.2rem;
    aspect-ratio: 16 /10;
    @apply rounded-lg;
@@ -53,6 +67,18 @@ import { Image } from 'astro:assets'
 
 .textCard {
 
+}
+
+.imgCard {
+   width: calc(100% - 5rem);
+   height: calc(100% - 5rem);
+   margin: auto;
+   @apply rounded-lg;
+}
+.imgCard img {
+   max-height: 100%;
+   object-fit: cover;
+   object-position: top;
 }
 svg {
    width: 1.5rem;
@@ -110,6 +136,11 @@ small, p {
 }
 p {
    opacity: 0.66;
+   white-space: nowrap;
+   overflow: clip;
+   text-overflow: ellipsis;
+   text-overflow-ellipsis: '. . .';
+   width: 14rem;
 }
 
 small {

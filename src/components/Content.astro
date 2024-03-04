@@ -2,8 +2,11 @@
 import '../styles/styles.scss';
 import '../styles/globals.scss';
 import Card from "./ui/Card.astro";
----
 
+import Figma from '../assets/killerportfolio.png';
+import KillerPortfolio from '../assets/killerportfolio.png';
+---
+<!--TODO: FIGURE OUT BETTER WAY TO DO THE IMAGES! MAYBE CDN? gonna have a lot of them...-->
 <script>
     const inspire = document.getElementById('inspirationAmount');
     const commerce = document.getElementById('commerceAmount');
@@ -165,59 +168,84 @@ import Card from "./ui/Card.astro";
         <!--Inspire-->
         <div class="item show inspire">
             <p class="labelText">INSPIRATION</p>
-            <Card label="inspiration" title="Killer Portfolios" func="Portfolio Inspiration"/>
+            <Card label="inspiration" title="Killer Portfolios" func="Portfolio Inspiration"
+                  src={KillerPortfolio}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"
+            />
         </div>
         <!--Commerce-->
         <div class="item show commerce">
             <p class="labelText">COMMERCE</p>
-            <Card label="commerce" title="Gumroad" func="E-Commerce Platform"/>
+            <Card label="commerce" title="Gumroad" func="E-Commerce Platform"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--News-->
         <div class="item show news">
             <p class="labelText">NEWS</p>
-            <Card label="newsletter" title="TLDR Design" func="Short-format Design Newsletter"/>
+            <Card label="newsletter" title="TLDR Design" func="Short-format Design Newsletter"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Tools-->
         <div class="item show tools">
             <p class="labelText">TOOLS</p>
-            <Card label="tool" title="Figma" func="Vector-based design tool"/>
+            <Card label="tool" title="Figma" func="Vector-based design tool"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Icons-->
         <div class="item show icons">
             <p class="labelText">ICONS</p>
-            <Card label="free" title="Lucide Icons" func="1400+ clean & consistent icons"/>
+            <Card label="free" title="Lucide Icons" func="1400+ clean & consistent icons"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <div class="item show icons">
             <p class="labelText">ICONS</p>
-            <Card label="free" title="Heroicons" func="1150+ hand-crafted icons"/>
+            <Card label="free" title="Heroicons" func="1150+ hand-crafted icons"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <div class="item show icons">
             <p class="labelText">ICONS</p>
-            <Card label="free" title="Radix Icons" func="A crisp set of 15×15 icons"/>
+            <Card label="free" title="Radix Icons" func="A crisp set of 15×15 icons"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Webdev / Web Design-->
         <div class="item show webdev">
             <p class="labelText">WEB</p>
-            <Card label="free" title="Astro.build" func="Framework for content-driven sites"/>
+            <Card label="free" title="Astro.build" func="Framework for content-driven sites"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <div class="item show webdev">
             <p class="labelText">WEB</p>
-            <Card label="free" title="Wireframe.cc" func="Simple wireframing tool"/>
+            <Card label="free" title="Wireframe.cc" func="Simple wireframing tool"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Design System-->
         <div class="item show designSys">
             <p class="labelText">DESIGN SYStem</p>
-            <Card label="free" title="Design Systems DB" func="Database of excellent Design Systems"/>
+            <Card label="free" title="Design Systems DB" func="Database of excellent Design Systems"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Free-->
         <div class="item show free">
             <p class="labelText">FREE</p>
-            <Card label="free" title="Open Peeps" func="Hand-drawn illustration library"/>
+            <Card label="free" title="Open Peeps" func="Hand-drawn illustration library"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Other-->
         <div class="item show other">
             <p class="labelText">OTHER</p>
-            <Card label="other" title="UI8 Resources" func="Curated design resources"/>
+            <Card label="other" title="UI8 Resources" func="Curated design resources"
+                  src={Figma}
+                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
         </div>
     </div>
 
@@ -260,6 +288,7 @@ import Card from "./ui/Card.astro";
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #e9eefa;
     }
 
     #filterList {
@@ -355,8 +384,6 @@ import Card from "./ui/Card.astro";
         order: 1;
         margin: 0 0.1rem 0 0;
         width: 0.9rem;
-        position: relative;
-        top: 1px;
     }
 
     .filterButton a {
@@ -416,8 +443,6 @@ import Card from "./ui/Card.astro";
 
     .filterButton span, #totalAmount {
         font-size: 0.7rem !important;
-        position: relative;
-        top: 1px;
         font-weight: 600;
         opacity: 0.5;
         @apply p-1;
