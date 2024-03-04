@@ -1,13 +1,17 @@
 ---
-const {label, tag1, tag2, tag3, title, func} = Astro.props;
+const {label, title, func} = Astro.props;
+import { Image } from 'astro:assets'
 ---
 
 <div class="item" aria-label={label} id="cardContainer">
    <div class="tagsList">
-      <small class="tagCard">{tag1}</small>
-      <small class="tagCard free">{tag2}</small>
+
    </div>
-   <span>(image goes here)</span>
+
+      <!--<div>-->
+      <!--   <Image src={src} alt="Alt text"/>-->
+      <!--</div>-->
+
    <div class="bottomCard">
       <div class="textCard">
          <h3>{title}</h3>
@@ -27,9 +31,19 @@ const {label, tag1, tag2, tag3, title, func} = Astro.props;
 <style>
 #cardContainer {
    background: linear-gradient(#250B5B 25%, #060525 75%);
-   width: 16rem;
-   height: 16rem;
+   width: 19.2rem;
+   aspect-ratio: 16 /10;
    @apply rounded-lg;
+   display:flex;
+   flex-direction: column;
+   justify-content: space-between;
+   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+   #cardContainer {
+      width: 80vw;
+      min-width: 20rem;
+   }
 }
 
 * {
@@ -37,14 +51,6 @@ const {label, tag1, tag2, tag3, title, func} = Astro.props;
    font-size: 1rem !important;
 }
 
-#cardContainer {
-   display:flex;
-   flex-direction: column;
-   justify-content: space-between;
-   cursor: pointer;
-
-   /*temp*/
-}
 .textCard {
 
 }
@@ -88,11 +94,6 @@ button:hover svg {
 }
 .tagsList .textCard {
 
-}
-span {
-   text-align: center;
-   color: whitesmoke;
-   opacity: 0.75;
 }
 .bottomCard {
    @apply p-3;
