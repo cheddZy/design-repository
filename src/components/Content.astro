@@ -53,10 +53,9 @@ import Card from "./ui/Card.astro";
         <div>
             <section class="filterMenu">
                 <h3>Filter</h3>
+
                 <div class="filterButtonList">
                     <button class="active" id="filterAll">All<span id="totalAmount"></span></button>
-                </div>
-                <div class="filterButtonList">
                     <button class='filterButton' aria-label='Inspiration contentt'><a>Inspiration</a><span id="inspirationAmount"></span></button>
                     <button class='filterButton' aria-label='Personal websites, portfolios, blogs'><a>Personal</a><span id="personalAmount"></span></button>
                     <button class='filterButton' aria-label='Commerce tools'><a>Commerce</a><span id="commerceAmount"></span></button>
@@ -169,35 +168,44 @@ import Card from "./ui/Card.astro";
         top: 0;
         position: sticky;
         margin: auto;
-        max-width: 1200px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem;
         justify-content: center;
         align-items: center;
     }
+    #filterList div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
 
     .filterButtonList {
         align-items: center;
         display: flex;
         flex-direction: row;
-        gap: 0.5rem;
+        gap: 1rem;
         flex-wrap: wrap;
+        /*
         background-color: #d1def6;
         border: #3574F0 1px solid;
-        @apply rounded-lg;
-        padding: 0.5rem 1rem;
+        */
+        padding: 1rem;
+        max-width: 1200px;
     }
 
 
     .filterMenu {
+        background-color: #F0F1F2;
+        border-bottom: #d1def6 1px solid;
         min-height: 50px;
         width: 100%;
         align-items: center;
         display: flex;
-        position: sticky;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         gap: 0.5rem;
         overflow-x: clip;
     }
@@ -240,7 +248,7 @@ import Card from "./ui/Card.astro";
     }
 
     .filterButton:hover, #filterAll:hover {
-        border: 1px #3574F0 solid;
+        border: 1px rgba(53, 115, 240, 0.5) solid;
     }
 
     .filterButton:active, #filterAll:active {
@@ -255,6 +263,9 @@ import Card from "./ui/Card.astro";
         font-weight: 500;
         background-color: #3574F0;
         border: 1px transparent solid;
+    }
+    #filterAll.active {
+        background-color: color-mix(in srgb, #1E1F22 50% , #3574F0 50%);
     }
     .implied {
         background-color: rgba(53, 115, 240, 0.25);
