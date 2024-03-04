@@ -57,13 +57,18 @@ svg {
 button {
    display: grid;
    place-items: center;
-   @apply transition-colors;
+   @apply transition-all;
    border: 1px solid rgba(240, 241, 242, 0.25);
+   opacity: 0;
 
    aspect-ratio: 1;
 }
-button:hover {
+#cardContainer:hover button {
+   opacity: 0.5;
+}
 
+#cardContainer:hover button:hover {
+   opacity: 1;
    background-color: #f0f1f2;
    color:#060525;
 

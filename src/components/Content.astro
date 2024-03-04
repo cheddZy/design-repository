@@ -56,11 +56,11 @@ import Card from "./ui/Card.astro";
 
                 <div class="filterButtonList">
                     <button class="active" id="filterAll">All<span id="totalAmount"></span></button>
-                    <button class='filterButton' aria-label='Inspiration contentt'><a>Inspiration</a><span id="inspirationAmount"></span></button>
-                    <button class='filterButton' aria-label='Personal websites, portfolios, blogs'><a>Personal</a><span id="personalAmount"></span></button>
-                    <button class='filterButton' aria-label='Commerce tools'><a>Commerce</a><span id="commerceAmount"></span></button>
-                    <button class='filterButton' aria-label='Resources'><a>Resources</a><span id="resourcesAmount"></span></button>
-                    <button class='filterButton' aria-label='Free resources'><a>Free</a><span id="freeAmount"></span></button>
+                    <button class='filterButton' id="inspire" aria-label='Inspiration contentt'><a>Inspiration</a><span id="inspirationAmount"></span></button>
+                    <button class='filterButton' id="personal" aria-label='Personal websites, portfolios, blogs'><a>Personal</a><span id="personalAmount"></span></button>
+                    <button class='filterButton' id="commerce" aria-label='Commerce tools'><a>Commerce</a><span id="commerceAmount"></span></button>
+                    <button class='filterButton' id="resource" aria-label='Resources'><a>Resources</a><span id="resourcesAmount"></span></button>
+                    <button class='filterButton' id="free" aria-label='Free resources'><a>Free</a><span id="freeAmount"></span></button>
                 </div>
             </section>
         </div>
@@ -270,6 +270,11 @@ import Card from "./ui/Card.astro";
 
 
 <style>
+    /*#inspire.active {background-color: #7a35f0}*/
+    /*#personal.active {background-color: #F0357D; color: #1E1F22}*/
+    /*#commerce.active {background-color: #F09F35; color: #1E1F22}*/
+    /*#resource.active {background-color: #35f0a2}*/
+    /*#free {}*/
     #contentWrap {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
