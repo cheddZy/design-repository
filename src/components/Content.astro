@@ -4,20 +4,66 @@ import '../styles/globals.scss';
 import Card from "./ui/Card.astro";
 ---
 
+<script>
+    const inspire = document.getElementById('inspirationAmount');
+    const personal = document.getElementById('personalAmount');
+    const commerce = document.getElementById('commerceAmount');
+    const resources = document.getElementById('resourcesAmount');
+    const free = document.getElementById('freeAmount');
+    const all = document.getElementById('totalAmount');
+
+    let items = document.querySelectorAll('.item');
+
+    const myList = document.getElementById('contentWrap');
+
+    const typeCounts = {};
+
+    for (const listItem of myList.children) {
+        const itemType = listItem.firstElementChild.textContent.toLowerCase().trim();
+
+        if (typeCounts[itemType]) {
+            typeCounts[itemType]++;
+        } else {
+            typeCounts[itemType] = 1;
+        }
+    }
+
+    let inspireType = 'inspiration',
+        personalType = 'personal',
+        commerceType = 'commerce',
+        resourcesType = 'resources',
+        freeType = 'free';
+
+    let total = 0;
+    for (const type in typeCounts) {
+        console.log(`Type "${type}": ${typeCounts[type]} occurrences`);
+            total += typeCounts[type];
+
+
+        inspire.textContent = `${typeCounts[inspireType]}`.toString();
+        personal.textContent = `${typeCounts[personalType]}`.toString();
+        commerce.textContent = `${typeCounts[commerceType]}`.toString();
+        resources.textContent = `${typeCounts[resourcesType]}`.toString();
+        free.textContent = `${typeCounts[freeType]}`.toString();
+        all.textContent = `${total}`.toString();
+    }
+
+</script>
+
 <section>
     <div id="filterList">
         <div>
             <section class="filterMenu">
                 <h3>Filter</h3>
                 <div class="filterButtonList">
-                    <button class="active" id="filterAll">All</button>
+                    <button class="active" id="filterAll">All<span id="totalAmount"></span></button>
                 </div>
                 <div class="filterButtonList">
-                    <button class='filterButton' aria-label='Inspiration contentt'>Inspiration</button>
-                    <button class='filterButton' aria-label='Personal websites, portfolios, blogs'>Personal</button>
-                    <button class='filterButton' aria-label='Commerce tools'>Commerce</button>
-                    <button class='filterButton' aria-label='Resources'>Resources</button>
-                    <button class='filterButton' aria-label='Free resources'>Free</button>
+                    <button class='filterButton' aria-label='Inspiration contentt'><a>Inspiration</a><span id="inspirationAmount"></span></button>
+                    <button class='filterButton' aria-label='Personal websites, portfolios, blogs'><a>Personal</a><span id="personalAmount"></span></button>
+                    <button class='filterButton' aria-label='Commerce tools'><a>Commerce</a><span id="commerceAmount"></span></button>
+                    <button class='filterButton' aria-label='Resources'><a>Resources</a><span id="resourcesAmount"></span></button>
+                    <button class='filterButton' aria-label='Free resources'><a>Free</a><span id="freeAmount"></span></button>
                 </div>
             </section>
         </div>
@@ -141,18 +187,13 @@ import Card from "./ui/Card.astro";
         font-size: 1rem !important;
     }
 
-    @media screen and (max-width: 800px) {
-        section {
-            flex-direction: row;
-            padding: 1rem;
-            border-radius: 0;
-        }
 
-    }
 
 
     .filterButton, #filterAll {
         display: flex;
+        align-items: center;
+        gap: 0.2rem;
     }
 
     .filterButton, #filterAll {
@@ -193,9 +234,21 @@ import Card from "./ui/Card.astro";
         background-color: rgba(53, 115, 240, 0.25);
     }
 
+    .filterButton span, #totalAmount {
+        font-size: 0.7rem !important;
+        position: relative;
+        top: 1px;
+        font-weight: 600;
+        opacity: 0.5;
+        @apply p-1;
+    }
+
 </style>
 
 <script>
+
+
+
     let filters = new Set();
     let buttons = document.querySelectorAll('.filterButton');
     let items = document.querySelectorAll('.item');
@@ -206,10 +259,10 @@ import Card from "./ui/Card.astro";
         btn.addEventListener('click', () => {
             if (btn.classList.contains('active')) {
                 btn.classList.remove('active');
-                filters.delete(btn.innerHTML.toUpperCase());
+                filters.delete(btn.firstElementChild.textContent.toUpperCase());
             } else {
                 btn.classList.add('active');
-                filters.add(btn.innerHTML.toUpperCase());
+                filters.add(btn.firstElementChild.textContent.toUpperCase());
             }
 
             if (showAll.classList.contains('active')) {
@@ -256,9 +309,6 @@ import Card from "./ui/Card.astro";
         } else {
 
             items.forEach(item => {
-                console.log(item.querySelector('p') + ' item');
-
-                item.firstElementChild.textContent;
 
                 let itemText = item.firstElementChild.textContent.toUpperCase().trim();
 
