@@ -1,30 +1,111 @@
 ---
-const {label} = Astro.props;
+const {label, tag1, tag2, tag3, title, func} = Astro.props;
 ---
 
 <div class="item" aria-label={label} id="cardContainer">
-   <div>
-      <small>{label}</small>
-</div>
+   <div class="tagsList">
+      <small class="tagCard">{tag1}</small>
+      <small class="tagCard free">{tag2}</small>
+   </div>
+   <div class="bottomCard">
+      <div class="textCard">
+         <h3>{title}</h3>
+         <p>{func}</p>
+      </div>
+      <button>
+         <a>
+            <svg data-slot="icon" aria-hidden="true" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+               <path d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+         </a>
+      </button>
+   </div>
 </div>
 
 
 <style>
 #cardContainer {
-   background: linear-gradient(#250B5B, #060525);
+   background: linear-gradient(#250B5B 25%, #060525 75%);
    width: 16rem;
    height: 16rem;
    @apply rounded-lg;
 }
 
+* {
+   border-radius: 0.25rem;
+   font-size: 1rem !important;
+}
+
 #cardContainer {
+   display:flex;
+   flex-direction: column;
+   justify-content: space-between;
+   cursor: pointer;
+}
+.textCard {
+   width: auto;
+}
+svg {
+   width: 1.5rem;
+   color: #f0f1f2;
+   @apply transition-colors;
+}
+
+button {
+   display: grid;
+   place-items: center;
+   @apply transition-colors;
+
+   aspect-ratio: 1;
+}
+button:hover {
+
+   background-color: #f0f1f2;
+   color:#060525;
+
+}
+button:hover svg {
+   color:#060525;
+}
+
+
+.tagsList {
+   @apply py-1;
+   @apply px-2;
+}
+.bottomCard {
+   @apply p-3;
    display: flex;
-   justify-content: center;
-   align-items: center;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+small, h3, p {
+   color: white;
+}
+small, p {
+   font-size: 0.75rem !important;
+}
+p {
+   opacity: 0.66;
 }
 
 small {
-   color: white;
+   @apply px-2;
+   @apply py-1;
+   font-size: 0.6rem !important;
+   @apply rounded-full;
+   background-color: #8aeca1;
+   color: #1E1F22;
+   font-weight: 600;
+
 }
+.free {
+   background-color: #8abbec;
+}
+.inspiration {
+   background-color: #b68aec;
+}
+
 
 </style>
