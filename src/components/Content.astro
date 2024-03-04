@@ -12,8 +12,6 @@ import Card from "./ui/Card.astro";
     const free = document.getElementById('freeAmount');
     const all = document.getElementById('totalAmount');
 
-    let items = document.querySelectorAll('.item');
-
     const myList = document.getElementById('contentWrap');
 
     const typeCounts = {};
@@ -92,6 +90,34 @@ import Card from "./ui/Card.astro";
         <div class="item show free">
             <p class="labelText">resources</p>
             <Card label="resources" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">resources</p>
+            <Card label="its not dependent on tag text" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">FREE</p>
+            <Card label="free"/>
+        </div>
+        <div class="item show free">
+            <p class="labelText">FREE</p>
+            <Card label="free"/>
+        </div>
+        <div class="item show free">
+            <label class="labelText">insPIRATION</label>
+            <Card label="inspiration" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">personal</p>
+            <Card label="personal" />
+        </div>
+        <div class="item show free">
+            <p class="labelText">personal</p>
+            <Card label="personal" />
+        </div>
+        <div class="item show commerce">
+            <p class="labelText">commerce</p>
+            <Card label="commerce" />
         </div>
         <div class="item show free">
             <p class="labelText">resources</p>
