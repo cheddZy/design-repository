@@ -3,6 +3,8 @@ import '../styles/styles.scss';
 import '../styles/globals.scss';
 import SignUpButton from "./buttons/SignUpButton.astro";
 import LogInButton from "./buttons/LogInButton.astro";
+import CopyButton from "./buttons/CopyButton.astro";
+import SubmitButtonSm from './buttons/SubmitButtonSm.astro'
 ---
 <!--TODO:
         1. Header & Subheader
@@ -14,24 +16,19 @@ import LogInButton from "./buttons/LogInButton.astro";
         the design repo
     </h1>
     <h4>End-all-be-all bookmark repository for designers</h4>
-    <!--TODO: Implement auth-->
-    <!--<div id="signIn">-->
-    <!--    <SignUpButton-->
-    <!--            href="/"-->
-    <!--            target="_blank"-->
-    <!--            label='Sign up button'-->
-    <!--    />-->
-    <!--    <LogInButton-->
-    <!--            href="/"-->
-    <!--            target="_blank"-->
-    <!--            label='Log in Button'-->
-    <!--    />-->
-    <!--</div>-->
+    <SubmitButtonSm />
+    <div class="hide">
+        <CopyButton />
+    </div>
 
 </section>
 
 
 <style>
+
+    .hide {
+        display: none;
+    }
 
     section {
         top: 1rem;
@@ -43,6 +40,13 @@ import LogInButton from "./buttons/LogInButton.astro";
         gap: 1rem;
         justify-content: center;
         align-items: center;
+    }
+    div {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
     }
     #IconWrap {
         aspect-ratio: 1;
