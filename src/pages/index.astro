@@ -7,13 +7,36 @@ import MainHeader from "../components/MainHeader.astro";
 import Hero from "../components/Hero.astro";
 import Content from "../components/Content.astro";
 import MainFooter from "../components/MainFooter.astro";
+import ThemeSwitch from "../components/util/ThemeSwitch.astro";
 ---
 
 <Layout title="The Design Repo">
 	<main>
+		<div id="themeSwitch">
+			<div id="wrapThemes">
+				<ThemeSwitch />
+			</div>
+		</div>
 		<MainHeader/>
 		<Hero/>
 		<Content />
 		<MainFooter />
 	</main>
 </Layout>
+
+
+<style>
+	#themeSwitch {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		border: solid 1px cyan;
+	}
+	#wrapThemes {
+		position: absolute;
+		right: 2rem;
+		bottom: 2rem;
+	}
+</style>

@@ -3,6 +3,24 @@
 @tailwind utilities;
 /* Font Imports */
 
+:root {
+  --color: #96aee0;
+}
+
+
+[data-theme='dark'] {
+  --color: #1E1F22 !important;
+}
+
+[data-theme='light'] {
+    --color: #96aee0 !important;
+}
+
+#themeSwitcher svg, #debugState {
+  color: var(--color);
+}
+
+
 html {font-size: 100%;} /* 16px */
 
 h1 {font-size: 4.210rem !important; /* 67.36px */}
