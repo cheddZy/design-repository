@@ -16,6 +16,7 @@ import Card from "./ui/Card.astro";
     import Figma from '../assets/figma.png';
 
 import CardContent from "./ui/cardContent.astro";
+import CardSubmit from "./ui/cardSubmit.astro";
 ---
 <!--TODO: FIGURE OUT BETTER WAY TO DO THE IMAGES!-->
 <script>
@@ -193,7 +194,7 @@ import CardContent from "./ui/cardContent.astro";
         <!--News-->
         <div class="item show news">
             <p class="labelText">NEWS</p>
-            <CardContent label="NEWSLETTER" title="Webflow Blog" func="Web Design Blog"
+            <CardContent label="NEWS" title="Webflow Blog" func="Web Design Blog"
                   src={WebflowBlog}
                   href="https://webflow.com/blog/?ref=repo.cheddzy.com"/>
         </div>
@@ -257,6 +258,10 @@ import CardContent from "./ui/cardContent.astro";
                   src={ui8}
                   href="https://ui8.net/?ref=repo.cheddzy.com"/>
         </div>
+
+    </div>
+    <div class="show other">
+        <CardSubmit />
     </div>
 
 </section>

@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import ActionButton from "../buttons/ActionButton.astro";
+import SignUpButton from "../buttons/SignUpButton.astro";
+import SubmitButton from "../buttons/SubmitButton.astro";
+const {title, func, src, href, label} = Astro.props;
+---
+<div class="submitContainer">
+    <div>
+        <h3>
+            Don't see what you need?
+        </h3>
+        <p>
+            Submit a resource,
+            or request more of
+            a certain type.
+        </p>
+    </div>
+    <SubmitButton
+            buttonText="Submit Resource"
+            href="mailto:artcheddzy@gmail.com"
+            label="Submit Resource"
+    />
+</div>
+
+
+<style>
+    * {
+    }
+
+    .submitContainer {
+        max-width: 1200px;
+        height: 10rem;
+        text-align: center;
+        overflow: clip;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        @apply rounded-xl;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+        font-weight: 800;
+    }
+
+    p {
+        font-size: 1rem !important;
+        font-weight: 500;
+    }
+    @media screen and (max-width: 768px) {
+        .submitContainer {
+            margin-inline: 10%;
+        }
+    }
+
+</style>

@@ -1,0 +1,59 @@
+---
+
+import '../../styles/styles.scss'
+import '../../styles/globals.scss'
+const { target, label } = Astro.props;
+---
+
+<script>
+    const button = document.getElementById('genericButton')
+
+    button.addEventListener('click', () => {
+
+    })
+</script>
+
+<button id="genericButton" type="button" aria-label={label}>
+    <a href='/' target={target}>
+
+        Submit or Request Resources
+    </a>
+</button>
+
+
+<style>
+
+    button {
+        display: flex;
+    }
+
+    a {
+        @apply px-6;
+        @apply py-3;
+        @apply rounded-full;
+        @apply transition-all;
+        @apply duration-100;
+        color: #F0F1F2;
+        font-size: 1rem;
+        border: 2px #F0F1F2 solid;
+        background: #1E1F22;
+        outline: 2px transparent solid;
+        font-weight: 600;
+
+    }
+    @keyframes border-anim {
+        0% {outline: 4px rgba(150, 174, 224, 0.25) dotted;}
+        100% {outline: 2px #96aee0 solid;}
+    }
+
+    a:hover {
+        background: #3574F0;
+        outline: 2px #96aee0 solid;
+        animation: border-anim 0.2s 1 ease-out;
+    }
+    a:active {
+        background: #3574F0;
+        outline: 2px #3574F0 solid;
+    }
+
+</style>
