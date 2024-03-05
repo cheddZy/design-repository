@@ -14,11 +14,16 @@ import Card from "./ui/Card.astro";
     import WebflowBlog from '../assets/webflowblog.png';
     import AstroDev from '../assets/astro.png';
     import Figma from '../assets/figma.png';
+    import DarkDesign from '../assets/dark.png';
+    import Footers from '../assets/footer©.png';
+    import HowToCrit from '../assets/howtocrit.png';
+    import InterfaceInGame from '../assets/interfaceingame.png';
+    import WebflowInspire from '../assets/webflowInspire.png';
+    import Wireframe from '../assets/wireframe.png';
 
 import CardContent from "./ui/cardContent.astro";
 import CardSubmit from "./ui/cardSubmit.astro";
 ---
-<!--TODO: FIGURE OUT BETTER WAY TO DO THE IMAGES!-->
 <script>
         const inspire = document.getElementById('inspirationAmount');
         const commerce = document.getElementById('commerceAmount');
@@ -114,6 +119,13 @@ import CardSubmit from "./ui/cardSubmit.astro";
                         </svg>
                         <span id="newsAmount"></span>
                     </button>
+                    <button class='filterButton' id="community" aria-label='News'><a>Community</a>
+                        <svg data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" fill-rule="evenodd"></path>
+                            <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z"></path>
+                        </svg>
+                        <span id="communityAmount">0</span>
+                    </button>
 
                     <button class='filterButton' id="tool" aria-label='Design Tools'><a>Tools</a>
                         <svg data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"
@@ -184,6 +196,30 @@ import CardSubmit from "./ui/cardSubmit.astro";
                          src={KillerPortfolio}
                          href="https://killerportfolio.com/?ref=repo.cheddzy.com" />
         </div>
+        <div class="item show inspire">
+            <p class="labelText">INSPIRATION</p>
+            <CardContent label='INSPIRATION' title="Footer©" func="Collection of Awesome Footers"
+                         src={Footers}
+                         href="https://www.footer.design/?ref=repo.cheddzy.com" />
+        </div>
+        <div class="item show inspire">
+            <p class="labelText">INSPIRATION</p>
+            <CardContent label='INSPIRATION' title="Dark Design" func="Curation of websites, from the 'Dark Side'"
+                         src={DarkDesign}
+                         href="https://www.dark.design/?ref=repo.cheddzy.com" />
+        </div>
+        <div class="item show inspire">
+            <p class="labelText">INSPIRATION</p>
+            <CardContent label='INSPIRATION' title="Made in Webflow" func="Awesome websites made in webflow"
+                         src={WebflowInspire}
+                         href="https://webflow.com/made-in-webflow/?ref=repo.cheddzy.com" />
+        </div>
+        <div class="item show inspire">
+            <p class="labelText">INSPIRATION</p>
+            <CardContent label='INSPIRATION' title="Interface In Game" func="Huge collection of Gaming UI References"
+                         src={InterfaceInGame}
+                         href="https://interfaceingame.com/?ref=repo.cheddzy.com" />
+        </div>
         <!--Commerce-->
         <div class="item show commerce">
             <p class="labelText">COMMERCE</p>
@@ -204,6 +240,12 @@ import CardSubmit from "./ui/cardSubmit.astro";
             <CardContent label="TOOL" title="Figma" func="Design tool catered to web design"
                   src={Figma}
                   href="https://www.figma.com/?ref=repo.cheddzy.com"/>
+        </div>
+        <div class="item show tools">
+            <p class="labelText">TOOLS</p>
+            <CardContent label="TOOL" title="Wireframe.cc" func="Tool for quick & simple Wireframes"
+                         src={Wireframe}
+                         href="https://wireframe.cc/?ref=repo.cheddzy.com"/>
         </div>
         <!--Icons-->
         <div class="item show icons">
@@ -257,6 +299,12 @@ import CardSubmit from "./ui/cardSubmit.astro";
             <CardContent label="OTHER" title="UI8 Resources" func="Quality curated design resources"
                   src={ui8}
                   href="https://ui8.net/?ref=repo.cheddzy.com"/>
+        </div>
+        <div class="item show other">
+            <p class="labelText">OTHER</p>
+            <CardContent label="OTHER" title="How to Crit" func="Excellent Information about giving Critique"
+                         src={HowToCrit}
+                         href="https://howtocrit.com/"/>
         </div>
 
     </div>
