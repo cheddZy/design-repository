@@ -3,63 +3,74 @@ import '../styles/styles.scss';
 import '../styles/globals.scss';
 import Card from "./ui/Card.astro";
 
-import Figma from '../assets/killerportfolio.png';
-import KillerPortfolio from '../assets/killerportfolio.png';
+    import KillerPortfolio from '../assets/killerportfolio.png';
+    import Gumroad from '../assets/gumroad.png';
+    import DesignDB from '../assets/designdb.png';
+    import Heroicons from '../assets/heroicons.png';
+    import Lucide from '../assets/lucide.png';
+    import RadixIcon from '../assets/radix.png';
+    import OpenPeeps from '../assets/openpeeps.png';
+    import ui8 from '../assets/ui8.png';
+    import WebflowBlog from '../assets/webflowblog.png';
+    import AstroDev from '../assets/astro.png';
+    import Figma from '../assets/figma.png';
+
+import CardContent from "./ui/cardContent.astro";
 ---
-<!--TODO: FIGURE OUT BETTER WAY TO DO THE IMAGES! MAYBE CDN? gonna have a lot of them...-->
+<!--TODO: FIGURE OUT BETTER WAY TO DO THE IMAGES!-->
 <script>
-    const inspire = document.getElementById('inspirationAmount');
-    const commerce = document.getElementById('commerceAmount');
-    const free = document.getElementById('freeAmount');
-    const all = document.getElementById('totalAmount');
-    const news = document.getElementById('newsAmount');
-    const tool = document.getElementById('toolAmount');
-    const icon = document.getElementById('iconAmount');
-    const webdev = document.getElementById('webdevAmount');
-    const designsys = document.getElementById('designsysAmount');
-    const other = document.getElementById('otherAmount');
+        const inspire = document.getElementById('inspirationAmount');
+        const commerce = document.getElementById('commerceAmount');
+        const free = document.getElementById('freeAmount');
+        const all = document.getElementById('totalAmount');
+        const news = document.getElementById('newsAmount');
+        const tool = document.getElementById('toolAmount');
+        const icon = document.getElementById('iconAmount');
+        const webdev = document.getElementById('webdevAmount');
+        const designsys = document.getElementById('designsysAmount');
+        const other = document.getElementById('otherAmount');
 
-    const myList = document.getElementById('contentWrap');
+        const myList = document.getElementById('contentWrap');
 
-    const typeCounts = {};
+        const typeCounts = {};
 
-    for (const listItem of myList.children) {
-        const itemType = listItem.firstElementChild.textContent.toLowerCase().trim();
+        for (const listItem of myList.children) {
+            const itemType = listItem.firstElementChild.textContent.toLowerCase().trim();
 
-        if (typeCounts[itemType]) {
-            typeCounts[itemType]++;
-        } else {
-            typeCounts[itemType] = 1;
+            if (typeCounts[itemType]) {
+                typeCounts[itemType]++;
+            } else {
+                typeCounts[itemType] = 1;
+            }
         }
-    }
 
-    let inspireType = 'inspiration',
-        commerceType = 'commerce',
-        freeType = 'free',
-        newsType = 'news',
-        toolType = 'tools',
-        iconType = 'icons',
-        webdevType = 'web',
-        otherType = 'other',
-        designsysType = 'design system';
+        let inspireType = 'inspiration',
+            commerceType = 'commerce',
+            freeType = 'free',
+            newsType = 'news',
+            toolType = 'tools',
+            iconType = 'icons',
+            webdevType = 'web',
+            otherType = 'other',
+            designsysType = 'design system';
 
-    let total = 0;
-    for (const type in typeCounts) {
-        console.log(`Type "${type}": ${typeCounts[type]} that match.`);
-        total += typeCounts[type];
-        inspire.textContent = `${typeCounts[inspireType]}`.toString();
+        let total = 0;
+        for (const type in typeCounts) {
+            console.log(`Type "${type}": ${typeCounts[type]} that match.`);
+            total += typeCounts[type];
+            inspire.textContent = `${typeCounts[inspireType]}`.toString();
 
 
-        commerce.textContent = `${typeCounts[commerceType]}`.toString();
-        free.textContent = `${typeCounts[freeType]}`.toString();
-        all.textContent = total.toString();
-        news.textContent = `${typeCounts[newsType]}`.toString();
-        tool.textContent = `${typeCounts[toolType]}`.toString();
-        icon.textContent = `${typeCounts[iconType]}`.toString();
-        webdev.textContent = `${typeCounts[webdevType]}`.toString();
-        other.textContent = `${typeCounts[otherType]}`.toString();
-        designsys.textContent = `${typeCounts[designsysType]}`.toString();
-    }
+            commerce.textContent = `${typeCounts[commerceType]}`.toString();
+            free.textContent = `${typeCounts[freeType]}`.toString();
+            all.textContent = total.toString();
+            news.textContent = `${typeCounts[newsType]}`.toString();
+            tool.textContent = `${typeCounts[toolType]}`.toString();
+            icon.textContent = `${typeCounts[iconType]}`.toString();
+            webdev.textContent = `${typeCounts[webdevType]}`.toString();
+            other.textContent = `${typeCounts[otherType]}`.toString();
+            designsys.textContent = `${typeCounts[designsysType]}`.toString();
+        }
 
 </script>
 
@@ -77,10 +88,10 @@ import KillerPortfolio from '../assets/killerportfolio.png';
                              xmlns="http://www.w3.org/2000/svg">
                             <path clip-rule="evenodd"
                                   d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z"
-                                  fill-rule="evenodd"></path>
+                            fill-rule="evenodd"></path>
                         </svg>
                         <span
-                                id="inspirationAmount"></span></button>
+                        id="inspirationAmount"></span></button>
 
                     <button class='filterButton' id="commerce" aria-label='Commerce tools'><a>Commerce</a>
                         <svg data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"
@@ -88,7 +99,7 @@ import KillerPortfolio from '../assets/killerportfolio.png';
                             <path d="M5.223 2.25c-.497 0-.974.198-1.325.55l-1.3 1.298A3.75 3.75 0 0 0 7.5 9.75c.627.47 1.406.75 2.25.75.844 0 1.624-.28 2.25-.75.626.47 1.406.75 2.25.75.844 0 1.623-.28 2.25-.75a3.75 3.75 0 0 0 4.902-5.652l-1.3-1.299a1.875 1.875 0 0 0-1.325-.549H5.223Z"></path>
                             <path clip-rule="evenodd"
                                   d="M3 20.25v-8.755c1.42.674 3.08.673 4.5 0A5.234 5.234 0 0 0 9.75 12c.804 0 1.568-.182 2.25-.506a5.234 5.234 0 0 0 2.25.506c.804 0 1.567-.182 2.25-.506 1.42.674 3.08.675 4.5.001v8.755h.75a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1 0-1.5H3Zm3-6a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-.75.75h-3a.75.75 0 0 1-.75-.75v-3Zm8.25-.75a.75.75 0 0 0-.75.75v5.25c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-5.25a.75.75 0 0 0-.75-.75h-3Z"
-                                  fill-rule="evenodd"></path>
+                            fill-rule="evenodd"></path>
                         </svg>
                         <span id="commerceAmount"></span>
                     </button>
@@ -98,7 +109,7 @@ import KillerPortfolio from '../assets/killerportfolio.png';
                              xmlns="http://www.w3.org/2000/svg">
                             <path clip-rule="evenodd"
                                   d="M3.75 4.5a.75.75 0 0 1 .75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 0 1-.75-.75V4.5Zm0 6.75a.75.75 0 0 1 .75-.75h.75a8.25 8.25 0 0 1 8.25 8.25v.75a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75v-.75a6 6 0 0 0-6-6H4.5a.75.75 0 0 1-.75-.75v-.75Zm0 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z"
-                                  fill-rule="evenodd"></path>
+                            fill-rule="evenodd"></path>
                         </svg>
                         <span id="newsAmount"></span>
                     </button>
@@ -108,18 +119,18 @@ import KillerPortfolio from '../assets/killerportfolio.png';
                              xmlns="http://www.w3.org/2000/svg">
                             <path clip-rule="evenodd"
                                   d="M12 6.75a5.25 5.25 0 0 1 6.775-5.025.75.75 0 0 1 .313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 0 1 1.248.313 5.25 5.25 0 0 1-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 1 1 2.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0 1 12 6.75ZM4.117 19.125a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z"
-                                  fill-rule="evenodd"></path>
+                            fill-rule="evenodd"></path>
                         </svg>
                         <span
-                                id="toolAmount"></span></button>
+                        id="toolAmount"></span></button>
 
                     <button class='filterButton' id="icons" aria-label='Icon Resources'><a>Icons</a>
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.67129 3.14634C4.47603 3.34161 4.47603 3.65819 4.67129 3.85345L7.14616 6.32833C7.34142 6.52359 7.65801 6.52359 7.85327 6.32833L10.3281 3.85345C10.5234 3.65819 10.5234 3.34161 10.3281 3.14634L7.85327 0.671471C7.65801 0.476209 7.34142 0.476209 7.14616 0.671471L4.67129 3.14634ZM7.49971 5.26766L5.73195 3.4999L7.49971 1.73213L9.26748 3.4999L7.49971 5.26766ZM8.67129 7.14634C8.47603 7.34161 8.47603 7.65819 8.67129 7.85345L11.1462 10.3283C11.3414 10.5236 11.658 10.5236 11.8533 10.3283L14.3281 7.85345C14.5234 7.65819 14.5234 7.34161 14.3281 7.14634L11.8533 4.67147C11.658 4.47621 11.3414 4.47621 11.1462 4.67147L8.67129 7.14634ZM11.4997 9.26766L9.73195 7.4999L11.4997 5.73213L13.2675 7.4999L11.4997 9.26766ZM4.67129 11.8535C4.47603 11.6582 4.47603 11.3416 4.67129 11.1463L7.14616 8.67147C7.34142 8.47621 7.65801 8.47621 7.85327 8.67147L10.3281 11.1463C10.5234 11.3416 10.5234 11.6582 10.3281 11.8535L7.85327 14.3283C7.65801 14.5236 7.34142 14.5236 7.14616 14.3283L4.67129 11.8535ZM5.73195 11.4999L7.49971 13.2677L9.26748 11.4999L7.49971 9.73213L5.73195 11.4999ZM0.671288 7.14649C0.476026 7.34175 0.476026 7.65834 0.671288 7.8536L3.14616 10.3285C3.34142 10.5237 3.65801 10.5237 3.85327 10.3285L6.32814 7.8536C6.5234 7.65834 6.5234 7.34175 6.32814 7.14649L3.85327 4.67162C3.65801 4.47636 3.34142 4.47636 3.14616 4.67162L0.671288 7.14649ZM3.49972 9.26781L1.73195 7.50005L3.49972 5.73228L5.26748 7.50005L3.49972 9.26781Z"
-                                  fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                         <span
-                                id="iconAmount"></span></button>
+                        id="iconAmount"></span></button>
 
                     <button class='filterButton' id="webdev" aria-label='Free resources'><a>Web</a>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -129,36 +140,36 @@ import KillerPortfolio from '../assets/killerportfolio.png';
                             <polyline points="8 6 2 12 8 18"/>
                         </svg>
                         <span
-                                id="webdevAmount"></span></button>
+                        id="webdevAmount"></span></button>
 
                     <button class='filterButton' id="designSys" aria-label='Free resources'><a>Design System</a>
                         <svg data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
                             <path clip-rule="evenodd"
                                   d="M2.25 4.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875V17.25a4.5 4.5 0 1 1-9 0V4.125Zm4.5 14.25a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"
-                                  fill-rule="evenodd"></path>
+                            fill-rule="evenodd"></path>
                             <path d="M10.719 21.75h9.156c1.036 0 1.875-.84 1.875-1.875v-5.25c0-1.036-.84-1.875-1.875-1.875h-.14l-8.742 8.743c-.09.089-.18.175-.274.257ZM12.738 17.625l6.474-6.474a1.875 1.875 0 0 0 0-2.651L15.5 4.787a1.875 1.875 0 0 0-2.651 0l-.1.099V17.25c0 .126-.003.251-.01.375Z"></path>
                         </svg>
                         <span
-                                id="designsysAmount"></span></button>
+                        id="designsysAmount"></span></button>
 
                     <button class='filterButton' id="free" aria-label='Free resources'><a>Free</a>
                         <svg data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
                             <path clip-rule="evenodd"
                                   d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
-                                  fill-rule="evenodd"></path>
+                            fill-rule="evenodd"></path>
                         </svg>
                         <span
-                                id="freeAmount"></span></button>
+                        id="freeAmount"></span></button>
 
                     <button class='filterButton' id="other" aria-label='Paid Resources'><a>Other</a>
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.60913 0.0634287C4.39082 0.0088505 4.16575 0.12393 4.08218 0.332867L3.1538 2.6538L0.832866 3.58218C0.702884 3.63417 0.604504 3.7437 0.566705 3.87849C0.528906 4.01329 0.555994 4.158 0.639992 4.26999L2.01148 6.09864L1.06343 9.89085C1.00944 10.1068 1.12145 10.3298 1.32691 10.4154L4.20115 11.613L5.62557 13.7496C5.73412 13.9124 5.93545 13.9864 6.12362 13.9327L9.62362 12.9327C9.62988 12.9309 9.63611 12.929 9.64229 12.9269L12.6423 11.9269C12.7923 11.8769 12.905 11.7519 12.9393 11.5976L13.9393 7.09761C13.9776 6.92506 13.9114 6.74605 13.77 6.63999L11.95 5.27499V2.99999C11.95 2.82955 11.8537 2.67373 11.7012 2.5975L8.70124 1.0975C8.67187 1.08282 8.64098 1.07139 8.60913 1.06343L4.60913 0.0634287ZM11.4323 6.01173L12.7748 7.01858L10.2119 9.15429C10.1476 9.20786 10.0995 9.2783 10.0731 9.35769L9.25382 11.8155L7.73849 10.8684C7.52774 10.7367 7.25011 10.8007 7.11839 11.0115C6.98667 11.2222 7.05074 11.4999 7.26149 11.6316L8.40341 12.3453L6.19221 12.9771L4.87441 11.0004C4.82513 10.9265 4.75508 10.8688 4.67307 10.8346L2.03046 9.73352L2.85134 6.44999H4.99999C5.24852 6.44999 5.44999 6.24852 5.44999 5.99999C5.44999 5.75146 5.24852 5.54999 4.99999 5.54999H2.72499L1.7123 4.19974L3.51407 3.47903L6.35769 4.4269C6.53655 4.48652 6.73361 4.42832 6.85138 4.28111L8.62413 2.06518L11.05 3.27811V5.19533L8.83287 6.08218C8.70996 6.13134 8.61494 6.23212 8.57308 6.35769L8.07308 7.85769C7.99449 8.09346 8.12191 8.34831 8.35769 8.4269C8.59346 8.50549 8.84831 8.37807 8.9269 8.14229L9.3609 6.84029L11.4323 6.01173ZM7.71052 1.76648L6.34462 3.47386L4.09505 2.724L4.77192 1.03183L7.71052 1.76648ZM10.2115 11.7885L12.116 11.1537L12.7745 8.19034L10.8864 9.76374L10.2115 11.7885Z"
-                                  fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+                            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
                         </svg>
                         <span
-                                id="otherAmount"></span></button>
+                        id="otherAmount"></span></button>
 
                 </div>
             </section>
@@ -168,84 +179,83 @@ import KillerPortfolio from '../assets/killerportfolio.png';
         <!--Inspire-->
         <div class="item show inspire">
             <p class="labelText">INSPIRATION</p>
-            <Card label="inspiration" title="Killer Portfolios" func="Portfolio Inspiration"
-                  src={KillerPortfolio}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"
-            />
+            <CardContent label='INSPIRATION' title="Killer Portfolios" func="Collection of Design Portfolios"
+                         src={KillerPortfolio}
+                         href="https://killerportfolio.com/?ref=repo.cheddzy.com" />
         </div>
         <!--Commerce-->
         <div class="item show commerce">
             <p class="labelText">COMMERCE</p>
-            <Card label="commerce" title="Gumroad" func="E-Commerce Platform"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label='COMMERCE' title="Gumroad" func="E-Commerce Platform"
+                  src={Gumroad}
+                  href="https://gumroad.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--News-->
         <div class="item show news">
             <p class="labelText">NEWS</p>
-            <Card label="newsletter" title="TLDR Design" func="Short-format Design Newsletter"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label="NEWSLETTER" title="Webflow Blog" func="Web Design Blog"
+                  src={WebflowBlog}
+                  href="https://webflow.com/blog/?ref=repo.cheddzy.com"/>
         </div>
         <!--Tools-->
         <div class="item show tools">
             <p class="labelText">TOOLS</p>
-            <Card label="tool" title="Figma" func="Vector-based design tool"
+            <CardContent label="TOOL" title="Figma" func="Design tool catered to web design"
                   src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+                  href="https://www.figma.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Icons-->
         <div class="item show icons">
             <p class="labelText">ICONS</p>
-            <Card label="free" title="Lucide Icons" func="1400+ clean & consistent icons"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label="ICONS" title="Lucide Icons" func="1400+ clean & consistent icons"
+                  src={Lucide}
+                  href="https://lucide.dev/?ref=repo.cheddzy.com"/>
         </div>
         <div class="item show icons">
             <p class="labelText">ICONS</p>
-            <Card label="free" title="Heroicons" func="1150+ hand-crafted icons"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label="ICONS" title="Heroicons" func="1150+ hand-crafted icons"
+                  src={Heroicons}
+                  href="https://heroicons.dev/?ref=repo.cheddzy.com"/>
         </div>
         <div class="item show icons">
             <p class="labelText">ICONS</p>
-            <Card label="free" title="Radix Icons" func="A crisp set of 15×15 icons"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label="ICONS" title="Radix Icons" func="A crisp set of 15×15 icons"
+                  src={RadixIcon}
+                  href="https://www.radix-ui.com/icons/?ref=repo.cheddzy.com"/>
         </div>
         <!--Webdev / Web Design-->
         <div class="item show webdev">
             <p class="labelText">WEB</p>
-            <Card label="free" title="Astro.build" func="Framework for content-driven sites"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label="WEB" title="Astro.build" func="Framework for content-driven sites"
+                  src={AstroDev}
+                  href="https://astro.build/?ref=repo.cheddzy.com"/>
         </div>
         <div class="item show webdev">
             <p class="labelText">WEB</p>
-            <Card label="free" title="Wireframe.cc" func="Simple wireframing tool"
+            <CardContent label="WEB" title="Wireframe.cc" func="Simple wireframing tool"
                   src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+                  href="https://astro.build/?ref=repo.cheddzy.com"/>
         </div>
         <!--Design System-->
         <div class="item show designSys">
-            <p class="labelText">DESIGN SYStem</p>
-            <Card label="free" title="Design Systems DB" func="Database of excellent Design Systems"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <p class="labelText">DESIGN SYSTEM</p>
+            <CardContent label="DESIGN SYSTEM" title="Design Systems DB" func="Database of excellent Design Systems"
+                  src={DesignDB}
+                  href="https://designsystems.surf/?ref=repo.cheddzy.com"/>
         </div>
         <!--Free-->
         <div class="item show free">
             <p class="labelText">FREE</p>
-            <Card label="free" title="Open Peeps" func="Hand-drawn illustration library"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label="FREE" title="Open Peeps" func="Hand-drawn illustration library"
+                  src={OpenPeeps}
+                  href="https://www.openpeeps.com/?ref=repo.cheddzy.com"/>
         </div>
         <!--Other-->
         <div class="item show other">
             <p class="labelText">OTHER</p>
-            <Card label="other" title="UI8 Resources" func="Curated design resources"
-                  src={Figma}
-                  href="https://killerportfolio.com/?ref=repo.cheddzy.com"/>
+            <CardContent label="OTHER" title="UI8 Resources" func="Quality curated design resources"
+                  src={ui8}
+                  href="https://ui8.net/?ref=repo.cheddzy.com"/>
         </div>
     </div>
 
@@ -260,7 +270,7 @@ import KillerPortfolio from '../assets/killerportfolio.png';
         grid-template-rows: auto;
         gap: 1rem;
         margin-inline: 4%;
-        margin-top: 2rem;
+        margin: 2rem;
         max-width: 1400px;
     }
 
@@ -289,6 +299,7 @@ import KillerPortfolio from '../assets/killerportfolio.png';
         flex-direction: column;
         align-items: center;
         background-color: #e9eefa;
+        border-bottom: #d1def6 1px solid;
     }
 
     #filterList {
@@ -369,7 +380,7 @@ import KillerPortfolio from '../assets/killerportfolio.png';
         }
 
         #filterList {
-            position: static;
+
         }
     }
 
@@ -415,13 +426,6 @@ import KillerPortfolio from '../assets/killerportfolio.png';
         border: 1px rgba(53, 115, 240, 0.5) solid;
     }
 
-    .filterButton:active, #filterAll:active {
-        color: #F0F1F2;
-        font-weight: 500;
-        background-color: #3574F0;
-        border: 1px transparent solid;
-    }
-
     .filterButton.active svg {
         color: #f0f1f2;
     }
@@ -447,6 +451,7 @@ import KillerPortfolio from '../assets/killerportfolio.png';
         opacity: 0.5;
         @apply p-1;
     }
+
 
 </style>
 

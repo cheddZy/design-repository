@@ -1,17 +1,7 @@
 ---
 const {label, title, func, src, href} = Astro.props;
-import { Image } from 'astro:assets'
+import { Image } from 'astro:assets';
 ---
-
-<script>
-   const card = document.getElementById('cardContainer');
-
-   let gradient = 'linear-gradient(#'+{colorHex}+' 25%, #060525 75%);'
-
-   card.style.background = gradient;
-   console.log(gradient);
-
-</script>
 
 <div class="item" aria-label={label} id="cardContainer">
    <div class="tagsList">
@@ -23,7 +13,7 @@ import { Image } from 'astro:assets'
 
     <div class="imgCard">
 
-           <Image src={src} alt="Alt text"/>
+           <Image src={src} width="50px" height="50px" alt="Alt text"/>
 
    </div>
    <div class="bottomCard">
@@ -77,7 +67,6 @@ import { Image } from 'astro:assets'
    @apply rounded-lg;
 }
 .imgCard img {
-   max-height: 100%;
    object-fit: cover;
    object-position: top;
 }
