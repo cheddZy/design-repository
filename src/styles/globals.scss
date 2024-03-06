@@ -9,6 +9,7 @@
   --text-secondary: #6F737A;
   --background-secondary: #e2e9f8;
   --offw: #d1def6;
+  --accent: #3574F0;
 }
 
 
@@ -18,13 +19,15 @@
   --text: #e9eefa;
   --text-secondary: #6F737A;
   --offw: #465173;
+  --accent: #7ea3e8;
 }
 
 [data-theme='light'] {
-  --background: #e9eefa;
+  --background: #F0F1F2;
   --text: #1E1F22;
   --text-secondary: #7285a2;
   --offw: #d1def6;
+  --accent: #3574F0;
 }
 
 #themeSwitcher svg {

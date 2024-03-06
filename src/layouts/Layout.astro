@@ -1,66 +1,73 @@
 ---
 interface Props {
-	title: string;
+    title: string;
 }
 
 import '../styles/styles.scss';
 import '../styles/globals.scss';
 import thumbnail from '../assets/bookmarkrepo.png';
 
-const { title } = Astro.props;
+const {title} = Astro.props;
 ---
 
 <!doctype html>
 <html data-alertBox="dismissed" lang="en">
-	<head>
-		<script is:inline>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))</script>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/Bookmark.svg" />
-		<meta content={title} property="og:title" />
-		<meta content="End-all-be-all bookmark repository for designers" property="og:description" />
-		<meta content="https://repo.cheddzy.com/" property="og:url" />
-		<meta content={thumbnail} property="og:image" />
-		<meta content="#3574F0" data-react-helmet="true" name="theme-color" />
-		<meta name="twitter:card" content="summary_large_image">
+<head>
+    <script is:inline>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))</script>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Astro description"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/Bookmark.svg"/>
+    <meta content={title} property="og:title"/>
+    <meta content="End-all-be-all bookmark repository for designers" property="og:description"/>
+    <meta content="https://repo.cheddzy.com/" property="og:url"/>
+    <meta content={thumbnail} property="og:image"/>
+    <meta content="#3574F0" data-react-helmet="true" name="theme-color"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Assistant:wght@200..800&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Hebrew:wght@100..900&display=swap"
+          rel="stylesheet">
 
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+
+    <meta name="generator" content={Astro.generator}/>
+    <title>{title}</title>
+</head>
+<body>
+<slot/>
+</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-	body {
-		overflow-y: scroll;
-	}
+    :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+                45deg,
+                rgb(var(--accent)),
+                rgb(var(--accent-light)) 30%,
+                white 60%
+        );
+    }
+
+    html {
+        font-family: system-ui, sans-serif;
+        background: #13151a;
+        background-size: 224px;
+    }
+
+    code {
+        font-family: Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+
+    body {
+        overflow-y: scroll;
+    }
 </style>

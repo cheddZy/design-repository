@@ -1,0 +1,192 @@
+---
+import '../styles/styles.scss';
+import '../styles/globals.scss';
+import ActionButton from "./buttons/ActionButton.astro";
+---
+
+<script>
+
+    let timestamp = Date.now()
+    let stamp = document.getElementById('time')
+    let date = new Date(timestamp);
+    let month = (date.getUTCMonth() + 1).toString();
+
+    switch (month) {
+        case '1':
+            month = 'January';
+            break;
+        case '2':
+            month = 'February';
+            break;
+        case '3':
+            month = 'March';
+            break;
+        case '4':
+            month = 'April';
+            break;
+        case '5':
+            month = 'May';
+            break;
+        case '6':
+            month = 'June';
+            break;
+        case '7':
+            month = 'July';
+            break;
+        case '8':
+            month = 'August';
+            break;
+        case '9':
+            month = 'September';
+            break;
+        case '10':
+            month = 'October';
+            break;
+        case '11':
+            month = 'November';
+            break;
+        case '12':
+            month = 'December';
+            break;
+    }
+
+    stamp.textContent = ((month + ', ' + date.getFullYear().toString()))
+
+</script>
+
+<section id="about">
+    <h1>Ever feel like you're endlessly looking for the perfect mockup? Are you still looking for stuff to put on your
+        Moodboard?<br>Been there, done that.</h1>
+    <p>
+        My goal with this site is to streamline the creative process for designers of all levels, to provide a one-stop
+        hub where you
+        can discover the best design resources available.
+    </p>
+    <p>
+        Of course, the internet is a big place. This means to make a good collection, your support is appreciated.
+    </p>
+    <div class="itemButtonAbout">
+        <ActionButton
+                buttonText='Submit resources'
+                href="mailto:artcheddzy@gmail.com"
+                label='Aria Label2'
+                target="_blank"
+        />
+    </div>
+</section>
+<section id="features">
+    <h1>Upcoming features & the desire to grow this platform</h1>
+    <p>
+        I intend to keep growing & developing this site for the long-term.
+        <br>Currently on my todo to look into (in no particular order):
+    </p>
+    <ul>
+        <li><strong>Implementing user auth & profiles</strong> to easily share your favorite resources</li>
+        <li><strong>A Tab for user generated resources</strong>, to remove the need to request addition to the curated
+            list
+        </li>
+        <li><strong>LOADS more resources</strong></li>
+        <li><strong>More Filter Categories</strong></li>
+        <li><strong>Changelog page</strong></li>
+        <li><strong>Improvements to the Filter itself</strong>, as I have some plans for it, the current code will need
+            a rewrite.
+        </li>
+    </ul>
+
+</section>
+<section id="ad">
+    <h1>Advertisements</h1>
+    <p>
+        There are currently no plans for supporting advertisements on this site. Sorry!
+    </p>
+</section>
+
+<section id="authors">
+    <h1>Contributors, Inspiration, Authors & Special Thanks</h1>
+    <p>
+        Website (as of <span id="time"></span>) is developed, curated and designed by <a href="https://cheddzy.com">Shachar
+        MW</a>.
+    </p>
+    <p>
+        Thank you <a href="https://www.deck.gallery/">deck.gallery</a> for inspiring me to make this site (you will notice some similarities between the two sites)
+    </p>
+    <p>
+        Special thanks to friends who gave feedback on the website during development, and those who continue to
+        help improve this little project.
+    </p>
+    <p>
+        Wanna contribute to the website? Feel free to contact and let's see what we can do.
+    </p>
+    <div class="itemButtonAbout">
+    <ActionButton
+            buttonText='Get in touch'
+            href="mailto:artcheddzy@gmail.com"
+            label='Aria Label2'
+            target="_blank"
+    />
+        </div>
+</section>
+
+
+<style>
+
+    section {
+        max-width: 530px;
+        margin: calc(100px - 0.25rem) auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        padding: 0.25rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem !important;
+        font-weight: 500;
+        font-family: 'Inter Tight', sans-serif;
+    }
+
+    p {
+        font-size: 1.1rem !important;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+
+    #about:after, #features:after, #ad:after, #authors:after {
+        content: '';
+        position: absolute;
+        top: -1.5rem;
+        font-size: 0.85rem !important;
+        color: var(--text-secondary) !important;
+        @apply py-1;
+    }
+
+    #about:after {
+        content: 'About';
+    }
+
+    #features:after {
+        content: 'Features';
+    }
+
+    #ad:after {
+        content: 'Sponsorship';
+    }
+    #authors:after {
+        content: 'Authors';
+    }
+
+    ul li {
+        list-style-type: disc;
+        padding-bottom: 0.5rem;
+    }
+
+    ul {
+        padding-left: 1rem;
+    }
+
+    .itemButtonAbout {
+        margin: auto;
+    }
+
+</style>
