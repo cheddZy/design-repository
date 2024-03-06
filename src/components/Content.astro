@@ -586,10 +586,10 @@ import CardSubmit from "./ui/cardSubmit.astro";
             } else if (filters.size === 0) {
                 showAll.classList.add('active');
                 showAllItems();
-            } else if (filters.size === 11) {
+            } else if (filters.size === 12) {
                 showAll.classList.add('implied');
                 showAllItems();
-            } else if (filters.size < 11) {
+            } else if (filters.size < 12) {
                 showAll.classList.remove('implied');
             }
             updateList();

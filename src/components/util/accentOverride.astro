@@ -3,19 +3,47 @@
 ---
 
 <script>
+let blueBtn = document.getElementById('blueAccent'),
+    redBtn = document.getElementById('redAccent'),
+    greenBtn = document.getElementById('redAccent');
 
+let btnState;
+if(localStorage.getItem('accentTheme') == 'blue') {
+    applyTheme(blueBtn, 'blue', redBtn, greenBtn);
+} else if(localStorage.getItem('accentTheme') == 'red') {
+    applyTheme(redBtn, 'red', blueBtn, greenBtn);
+} else {
+    applyTheme(greenBtn, 'green', blueBtn, redBtn);
+}
+
+blueBtn.addEventListener('click', () => {
+    applyTheme(blueBtn, 'blue', redBtn, greenBtn);
+})
+redBtn.addEventListener('click', () => {
+    applyTheme(redBtn, 'red', blueBtn, greenBtn);
+})
+greenBtn.addEventListener('click', () => {
+    applyTheme(greenBtn, 'green', blueBtn, redBtn);
+})
+
+
+function applyTheme(setA, setB, a, b) {
+    localStorage.setItem('accentTheme', setB.toString());
+    setA.classList.add('active')
+    a && b.classList.remove('active');
+}
 
 
 </script>
 
 <div id="accentListWrap">
-    <button class="accentButton blueAccent">
+    <button class="accentButton active" id="blueAccent">
 
     </button>
-    <button class="accentButton redAccent">
+    <button class="accentButton" id="redAccent">
 
     </button>
-    <button class="accentButton greenAccent">
+    <button class="accentButton" id="greenAccent">
 
     </button>
 </div>
@@ -25,6 +53,7 @@
         width: 3rem;
         height: 0.75rem;
         background-color: #3574F0;
+        opacity: 0.7;
         @apply rounded-sm;
         @apply my-1;
         @apply transition-opacity;
@@ -44,8 +73,8 @@
     button:hover svg {
         color: var(--text) !important;
     }
-    button:hover svg.active {
-        color: #3574F0 !important;
+    button.active {
+        opacity: 1;
     }
     a {
         width: 100%;
@@ -70,13 +99,13 @@
             height: 1.2rem;
         }
     }
-    .blueAccent {
+    #blueAccent {
         background-color: #3574F0;
     }
-    .redAccent {
+    #redAccent {
         background-color: #bb2d5d;
     }
-    .greenAccent {
+    #greenAccent {
         background-color: #50c53f;
     }
 
