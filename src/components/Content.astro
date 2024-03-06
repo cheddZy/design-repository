@@ -35,6 +35,8 @@ import CardSubmit from "./ui/cardSubmit.astro";
         const webdev = document.getElementById('webdevAmount');
         const designsys = document.getElementById('designsysAmount');
         const other = document.getElementById('otherAmount');
+        const community = document.getElementById('communityAmount');
+        const studies = document.getElementById('studiesAmount');
 
         const myList = document.getElementById('contentWrap');
 
@@ -58,6 +60,8 @@ import CardSubmit from "./ui/cardSubmit.astro";
             iconType = 'icons',
             webdevType = 'web',
             otherType = 'other',
+            communityType = 'communities',
+            studiesType = 'studies',
             designsysType = 'design system';
 
         let total = 0;
@@ -75,7 +79,9 @@ import CardSubmit from "./ui/cardSubmit.astro";
             icon.textContent = `${typeCounts[iconType]}`.toString();
             webdev.textContent = `${typeCounts[webdevType]}`.toString();
             other.textContent = `${typeCounts[otherType]}`.toString();
+            community.textContent = `${typeCounts[communityType]}`.toString();
             designsys.textContent = `${typeCounts[designsysType]}`.toString();
+            studies.textContent = `${typeCounts[studiesType]}`.toString();
         }
 
 </script>
@@ -243,6 +249,19 @@ import CardSubmit from "./ui/cardSubmit.astro";
             <CardContent label="NEWS" title="Webflow Blog" func="Web Design Blog"
                   src={WebflowBlog}
                   href="https://webflow.com/blog/?ref=repo.cheddzy.com"/>
+        </div>
+        <!--Communities-->
+        <div class="item show news">
+            <p class="labelText">COMMUNITIES</p>
+            <CardContent label="COMMUNITY" title="The Spot" func="Inclusive community for designers & creatives"
+                         src="https://cdn.discordapp.com/splashes/416387705765625856/7eb760f72f63818bdafb08fced1c7e2f.jpg?size=2048"
+                         href="https://thespot.design/?ref=repo.cheddzy.com"/>
+        </div>
+        <div class="item show news">
+            <p class="labelText">STUDIES</p>
+            <CardContent label="STUDIES" title="Unsplash + Figma" func="Case Study By Kiril Zakharov"
+                         src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*ebsayXxlAfSUWvMJKZHS7A.jpeg"
+                         href="https://medium.com/unsplash/unsplash-figma-cf03195e9f9a/?ref=repo.cheddzy.com"/>
         </div>
         <!--Tools-->
         <div class="item show tools">
