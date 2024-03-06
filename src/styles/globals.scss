@@ -4,20 +4,39 @@
 /* Font Imports */
 
 :root {
-  --color: #96aee0;
+  --background: #e9eefa;
+  --text: #1E1F22;
+  --text-secondary: #6F737A;
+  --background-secondary: #e2e9f8;
+  --offw: #d1def6;
 }
 
 
 [data-theme='dark'] {
-  --color: #1E1F22 !important;
+  --background: #111625 !important;
+  --background-secondary: #010111;
+  --text: #e9eefa;
+  --text-secondary: #6F737A;
+  --offw: #465173;
 }
 
 [data-theme='light'] {
-    --color: #96aee0 !important;
+  --background: #e9eefa;
+  --text: #1E1F22;
+  --text-secondary: #a7b9d5;
+  --offw: #d1def6;
 }
 
-#themeSwitcher svg, #debugState {
-  color: var(--color);
+#themeSwitcher svg {
+  color: var(--text-secondary);
+}
+body {
+  color: var(--text);
+  background-color: var(--background);
+}
+
+#filterMenu {
+  background-color: #8d8d8d;
 }
 
 

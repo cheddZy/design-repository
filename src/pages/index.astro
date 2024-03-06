@@ -8,34 +8,54 @@ import Hero from "../components/Hero.astro";
 import Content from "../components/Content.astro";
 import MainFooter from "../components/MainFooter.astro";
 import ThemeSwitch from "../components/util/ThemeSwitch.astro";
+import GridOverride from "../components/util/gridOverride.astro";
 ---
 
 <Layout title="The Design Repo">
-	<main>
-		<MainHeader/>
-		<Hero/>
-		<Content />
-		<!--<div id="themeSwitch">-->
-		<!--	<div id="wrapThemes">-->
-		<!--		<ThemeSwitch />-->
-		<!--	</div>-->
-		<!--</div>-->
-		<MainFooter />
-	</main>
+    <main>
+        <div id="themeSwitch">
+            <div id="wrapThemes">
+                <div id="gridWrap">
+                    <GridOverride/>
+                </div>
+                <ThemeSwitch/>
+            </div>
+        </div>
+        <MainHeader/>
+        <Hero/>
+        <Content/>
+        <MainFooter/>
+    </main>
 </Layout>
 
 
 <style>
-	#themeSwitch {
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
-	#wrapThemes {
-		position: absolute;
-		right: 2rem;
-		bottom: 2rem;
-	}
+    #themeSwitch {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+    #gridWrap {
+
+    }
+
+    #wrapThemes {
+        position: absolute;
+        right: 2rem;
+        bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @media screen and (max-width: 1000px) {
+        #gridWrap {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        #themeSwitch {
+            display: none;
+        }
+    }
 </style>

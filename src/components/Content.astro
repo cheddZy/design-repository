@@ -330,6 +330,12 @@ import CardSubmit from "./ui/cardSubmit.astro";
         margin: 2rem;
         max-width: 1400px;
     }
+    .gridLarge {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .gridDef {
+        grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    }
 
     .hide {
         display: none;
@@ -355,8 +361,8 @@ import CardSubmit from "./ui/cardSubmit.astro";
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #e9eefa;
-        border-bottom: #d1def6 1px solid;
+        background-color: var(--background-secondary);
+        border-bottom: var(--offw) 1px solid;
     }
 
     #filterList {
@@ -396,8 +402,8 @@ import CardSubmit from "./ui/cardSubmit.astro";
 
 
     .filterMenu {
-        background-color: #F0F1F2;
-        border-bottom: #d1def6 1px solid;
+        background-color: var(--background);
+        border-bottom: var(--offw) 1px solid;
         min-height: 50px;
         align-items: center;
         width: 100%;
@@ -420,20 +426,23 @@ import CardSubmit from "./ui/cardSubmit.astro";
     }
 
     @media screen and (max-width: 1380px) {
-        #contentWrap {
-            grid-template-columns: 1fr 1fr 1fr;
+        .gridDef {
+            grid-template-columns: 1fr 1fr 1fr !important;
+        }
+        .gridLarge {
+            grid-template-columns: 1fr 1fr !important;
         }
     }
 
     @media screen and (max-width: 1000px) {
         #contentWrap {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr !important;
         }
     }
 
     @media screen and (max-width: 768px) {
         #contentWrap {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
         }
 
         #filterList {
@@ -441,11 +450,11 @@ import CardSubmit from "./ui/cardSubmit.astro";
         }
     }
 
-
     .filterButton, #filterAll {
         display: flex;
         align-items: center;
         gap: 0.2rem;
+        color: var(--text) !important;
     }
 
     .filterButton svg {
@@ -485,10 +494,11 @@ import CardSubmit from "./ui/cardSubmit.astro";
 
     .filterButton.active svg {
         color: #f0f1f2;
+
     }
 
     .filterButton.active, #filterAll.active {
-        color: #F0F1F2;
+        color: #F0F1F2 !important;
         font-weight: 500;
         background-color: #3574F0;
         border: 1px transparent solid;

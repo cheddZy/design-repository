@@ -35,7 +35,7 @@ const { target, label } = Astro.props;
         @apply duration-100;
         color: #F0F1F2;
         font-size: 1rem;
-        border: 2px #F0F1F2 solid;
+        border: 2px transparent solid;
         background: #1E1F22;
         outline: 2px transparent solid;
         font-weight: 600;
@@ -49,6 +49,7 @@ const { target, label } = Astro.props;
     a:hover {
         background: #3574F0;
         outline: 2px #96aee0 solid;
+        border: 2px var(--background) solid;
         animation: border-anim 0.2s 1 ease-out;
     }
     a:active {

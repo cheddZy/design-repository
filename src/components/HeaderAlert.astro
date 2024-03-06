@@ -14,7 +14,7 @@ import '../styles/globals.scss'
         alertContainer.style.top = '-2rem';
         setTimeout(function() {
             alertBox.style.display = 'none';
-        }, 300)
+        }, 100)
         localStorage.setItem('alertBox', 'dismissed');
     })
 </script>
@@ -60,7 +60,7 @@ import '../styles/globals.scss'
         margin-right: auto;
         max-width: 1100px;
         @apply transition-all;
-        @apply duration-300;
+        @apply duration-100;
         transition-timing-function: ease-in;
 
         z-index: 1;
@@ -89,7 +89,8 @@ import '../styles/globals.scss'
         @apply px-3;
         @apply py-2;
         @apply rounded-xl;
-        @apply transition-all;
+
+        @apply transition-opacity;
         opacity: 1;
         display: flex;
         flex-direction: row;
