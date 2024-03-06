@@ -1,0 +1,84 @@
+---
+
+---
+
+<script>
+
+
+
+</script>
+
+<div id="accentListWrap">
+    <button class="accentButton blueAccent">
+
+    </button>
+    <button class="accentButton redAccent">
+
+    </button>
+    <button class="accentButton greenAccent">
+
+    </button>
+</div>
+
+<style>
+    button {
+        width: 3rem;
+        height: 0.75rem;
+        background-color: #3574F0;
+        @apply rounded-sm;
+        @apply my-1;
+        @apply transition-opacity;
+        @apply duration-100;
+    }
+    #accentListWrap {
+        border: var(--text-secondary) solid 2px;
+        @apply px-1.5;
+        @apply rounded-lg;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    button:hover svg {
+        color: var(--text) !important;
+    }
+    button:hover svg.active {
+        color: #3574F0 !important;
+    }
+    a {
+        width: 100%;
+        height: 0.8rem;
+        font-family: monospace;
+        font-size: 0.6rem;
+    }
+
+    svg {
+        height: 1rem;
+        color: var(--text-secondary) !important;
+        @apply transition-colors;
+    }
+
+    @media screen and (max-width: 768px) {
+        button {
+            width: 2.5rem;
+            opacity: 1;
+        }
+
+        svg {
+            height: 1.2rem;
+        }
+    }
+    .blueAccent {
+        background-color: #3574F0;
+    }
+    .redAccent {
+        background-color: #bb2d5d;
+    }
+    .greenAccent {
+        background-color: #50c53f;
+    }
+
+
+</style>

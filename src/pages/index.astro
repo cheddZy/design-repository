@@ -9,12 +9,16 @@ import Content from "../components/Content.astro";
 import MainFooter from "../components/MainFooter.astro";
 import ThemeSwitch from "../components/util/ThemeSwitch.astro";
 import GridOverride from "../components/util/gridOverride.astro";
+import AccentOverride from "../components/util/accentOverride.astro";
 ---
 
 <Layout title="The Design Repo">
     <main>
         <div id="themeSwitch">
             <div id="wrapThemes">
+                <!--<div id="accentWrap">-->
+                <!--    <AccentOverride/>-->
+                <!--</div>-->
                 <div id="gridWrap">
                     <GridOverride/>
                 </div>
@@ -36,10 +40,6 @@ import GridOverride from "../components/util/gridOverride.astro";
         right: 0;
         z-index: 1;
     }
-    #gridWrap {
-
-    }
-
     #wrapThemes {
         position: absolute;
         right: 2rem;
