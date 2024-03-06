@@ -5,6 +5,7 @@ interface Props {
 
 import '../styles/styles.scss';
 import '../styles/globals.scss';
+import thumbnail from '../assets/bookmarkrepo.png';
 
 const { title } = Astro.props;
 ---
@@ -17,6 +18,13 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/Bookmark.svg" />
+		<meta content={title} property="og:title" />
+		<meta content="End-all-be-all bookmark repository for designers" property="og:description" />
+		<meta content="https://repo.cheddzy.com/" property="og:url" />
+		<meta content={thumbnail} property="og:image" />
+		<meta content="#3574F0" data-react-helmet="true" name="theme-color" />
+		<meta name="twitter:card" content="summary_large_image">
+
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
