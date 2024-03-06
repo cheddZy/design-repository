@@ -95,9 +95,10 @@ import ActionButton from "./buttons/ActionButton.astro";
 
 </section>
 <section id="ad">
-    <h1>Advertisements</h1>
+    <h1>Collaborations & Advertisements</h1>
     <p>
-        There are currently no plans for supporting advertisements on this site. Sorry!
+        As the website is in an early stage, any collaborations inquiries are currently best directed to artcheddzy@gmail.com.
+        However there are currently no plans for supporting advertisements on this site. Sorry!
     </p>
 </section>
 
@@ -108,7 +109,8 @@ import ActionButton from "./buttons/ActionButton.astro";
         MW</a>.
     </p>
     <p>
-        Thank you <a href="https://www.deck.gallery/">deck.gallery</a> for inspiring me to make this site (you will notice some similarities between the two sites)
+        Thank you <a href="https://www.deck.gallery/">deck.gallery</a> for inspiring me to make this site (you will
+        notice some similarities between the two sites)
     </p>
     <p>
         Special thanks to friends who gave feedback on the website during development, and those who continue to
@@ -118,13 +120,13 @@ import ActionButton from "./buttons/ActionButton.astro";
         Wanna contribute to the website? Feel free to contact and let's see what we can do.
     </p>
     <div class="itemButtonAbout">
-    <ActionButton
-            buttonText='Get in touch'
-            href="mailto:artcheddzy@gmail.com"
-            label='Aria Label2'
-            target="_blank"
-    />
-        </div>
+        <ActionButton
+                buttonText='Get in touch'
+                href="mailto:artcheddzy@gmail.com"
+                label='Aria Label2'
+                target="_blank"
+        />
+    </div>
 </section>
 
 
@@ -149,7 +151,7 @@ import ActionButton from "./buttons/ActionButton.astro";
     p {
         font-size: 1.1rem !important;
         font-weight: 400;
-        opacity: 0.8;
+        color: #d0d9e1;
     }
 
     #about:after, #features:after, #ad:after, #authors:after {
@@ -172,6 +174,7 @@ import ActionButton from "./buttons/ActionButton.astro";
     #ad:after {
         content: 'Sponsorship';
     }
+
     #authors:after {
         content: 'Authors';
     }
@@ -187,6 +190,11 @@ import ActionButton from "./buttons/ActionButton.astro";
 
     .itemButtonAbout {
         margin: auto;
+    }
+    a {
+        color: #f0f1f2 !important;
+        text-decoration: underline #3574F0;
+        opacity: 1;
     }
 
 </style>
